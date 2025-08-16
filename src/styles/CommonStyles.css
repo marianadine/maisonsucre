@@ -1,0 +1,41 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    animation: fadeSlideUp 1s ease forwards;
+}
+
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scroll-indicator {
+    position: fixed;
+    top: 90%;
+    left: clamp(20px, 4vw, 40px);
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 1.5vw, 15px);
+    z-index: 1001;
+}
+
+.scroll-indicator .dot {
+    width: clamp(8px, 1vw, 10px);
+    height: clamp(8px, 1vw, 10px);
+    border-radius: 50%;
+    background-color: grey;
+    transition: background-color 0.3s;
+}
+
+.scroll-indicator .dot.active {
+    background-color: black;
+}
