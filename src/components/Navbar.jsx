@@ -7,16 +7,16 @@ const Navbar = () => {
         <nav className='navbar'>
             <ul className='navbar-links'>
                 <li>
-                    <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink>
+                    <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>home</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>About</NavLink>
+                    <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>about</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/pastry" className={({ isActive }) => isActive ? "active" : ""}>Pastries</NavLink>
+                    <NavLink to="/pastry" className={({ isActive }) => isActive ? "active" : ""}>pastries</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/cart" className={({ isActive }) => isActive ? "active" : ""}>Cart</NavLink>
+                    <NavLink to="/cart" className={({ isActive }) => isActive ? "active" : ""}>cart</NavLink>
                 </li>
             </ul>
         </nav>

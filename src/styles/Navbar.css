@@ -24,14 +24,14 @@
     color: inherit;
     font-weight: 400;
     transition: color 0.3s ease-in;
+    color: #696969;
 }
 
 .navbar-links li a:hover {
-    color: #555;
+    color: #000000;
 }
 
 .navbar-links li a.active {
     font-weight: 600;
     text-decoration: underline;
-    color: #000;
 }
