@@ -1,14 +1,6 @@
-.mainpagetext {
-    font-family: "Libre Caslon Text", serif;
-    font-weight: 500;
-    font-size: 96px;
-    color: #1F4397;
-    margin-bottom: -15px;
-}
-
 .pastry {
-    width: 320px;
-    margin: 0 20px;
+    width: 310px;
+    margin: 10px 20px;
     box-shadow: #ccc 0px 0px 10px;
     border-radius: 15px;
     opacity: 0;
@@ -22,6 +14,108 @@
 }
 
 .pastry:hover {
-    transform: scale(1.05);
+    transform: scale(1.15);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pastry-text {
+    font-size: 24px;
+    text-align: left;
+    align-self: flex-start;
+    width: 40%;
+    margin-left: 100px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 20px;
+    width: 80%;
+}
+
+.menu-card {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 15px;
+    padding: 20px;
+    gap: 35px;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.menu-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.menu-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1F4397;
+}
+
+.menu-desc {
+    font-size: 18px;
+    color: #555;
+    margin: 8px 0 16px;
+    text-align: left;
+}
+
+.menu-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #1F4397;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1F4397;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+    background: #1F4397;
+    color: white;
+}
+
+.preorder-btn {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 20px;
+    background: #1F4397;
+    color: white;
+    margin-left: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.preorder-btn:hover {
+    background: #162e6d;
 }
