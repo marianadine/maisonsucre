@@ -32,10 +32,10 @@
     width: clamp(8px, 1vw, 10px);
     height: clamp(8px, 1vw, 10px);
     border-radius: 50%;
-    background-color: grey;
+    background-color: lightgrey;
     transition: background-color 0.3s;
 }
 
 .scroll-indicator .dot.active {
-    background-color: black;
+    background-color: #1F4397;
 }
