@@ -2,28 +2,50 @@ import React, { useEffect, useState, useRef } from 'react';
 import '../styles/CommonStyles.css';
 import '../styles/Home.css';
 import ScrollIndicator from './ScrollIndicator';
+import brownies from '../imgs/brownies.png';
+import croissant from '../imgs/croissant.png';
+import tiramisu from '../imgs/tiramisu.png';
+import waffles from '../imgs/waffles.png';
+import cookies from '../imgs/cookies.png';
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState(0);
   const sectionRefs = [useRef(), useRef(), useRef(), useRef(), useRef()];
 
   useEffect(() => {
-    const observerOptions = { root: null, threshold: 0.5 };
-    const observerCallback = entries => {
+    // Section observer (already working)
+    const sectionOptions = { root: null, threshold: 0.5 };
+    const sectionObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const index = Number(entry.target.dataset.index);
           setActiveSection(index);
         }
       });
-    };
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    }, sectionOptions);
 
     sectionRefs.forEach(ref => {
-      if (ref.current) observer.observe(ref.current);
+      if (ref.current) sectionObserver.observe(ref.current);
     });
 
-    return () => observer.disconnect();
+    // pastry animation observer
+    const pastryOptions = { root: null, threshold: 0.2 };
+    const pastryObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          pastryObserver.unobserve(entry.target);
+        }
+      });
+    }, pastryOptions);
+
+    const pastries = document.querySelectorAll(".pastry");
+    pastries.forEach(pastry => pastryObserver.observe(pastry));
+
+    return () => {
+      sectionObserver.disconnect();
+      pastryObserver.disconnect();
+    };
   }, []);
 
   return (
@@ -44,11 +66,20 @@ const Home = () => {
       </section>
 
       <section className='container' ref={sectionRefs[2]} data-index={2}>
-        <h1>pastries</h1>
+        <div>
+          <img className='pastry' src={cookies} />
+          <img className='pastry' src={brownies} />
+          <img className='pastry' src={waffles} />
+          <img className='pastry' src={croissant} />
+          <img className='pastry' src={tiramisu} />
+        </div>
+        <p>Explore our pastries and desserts and discover a world where elegance meets indulgence.</p>
       </section>
 
       <section className='container' ref={sectionRefs[3]} data-index={3}>
-        <h1>coming soon</h1>
+        <h1 className='poppins-header'>Did you hear that crack?</h1>
+        <h1 className='poppins-header'>The pastry with a perfect shatter.</h1>
+        <p>Get ready for pastries with a shatter so satisfying, you’ll taste it before the first bite. Golden, flaky, and irresistibly addictive — Crack Cakes are almost here.</p>
       </section>
 
       <section className='container' ref={sectionRefs[4]} data-index={4}>

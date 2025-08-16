@@ -5,3 +5,23 @@
     color: #1F4397;
     margin-bottom: -15px;
 }
+
+.pastry {
+    width: 320px;
+    margin: 0 20px;
+    box-shadow: #ccc 0px 0px 10px;
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.pastry.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pastry:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
