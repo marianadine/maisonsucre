@@ -39,3 +39,27 @@
 .scroll-indicator .dot.active {
     background-color: #1F4397;
 }
+
+/* containers */
+.row-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    gap: 200px;
+}
+
+.row-container.sweet-spotlights{
+    border: none;
+    border-bottom: 2px dotted #1F4397;
+}
+
+/* text styles */
+.poppins-header {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: clamp(24px, 3vw, 36px);
+    color: #1F4397;
+    width: 100%;
+}
