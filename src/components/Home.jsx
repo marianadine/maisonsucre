@@ -13,6 +13,8 @@ import bs2 from '../imgs/bs2.png';
 import bs3 from '../imgs/bs3.png';
 import bs4 from '../imgs/bs4.png';
 
+import cs from '../imgs/cs.png';
+
 import { FaPlus, FaMinus } from "react-icons/fa";
 
 const Home = () => {
@@ -130,9 +132,18 @@ const Home = () => {
       </section>
 
       <section className='container' ref={sectionRefs[3]} data-index={3}>
-        <h1 className='poppins-header'>Did you hear that crack?</h1>
-        <h1 className='poppins-header'>The pastry with a perfect shatter.</h1>
-        <p>Get ready for pastries with a shatter so satisfying, you’ll taste it before the first bite. Golden, flaky, and irresistibly addictive — Crack Cakes are almost here.</p>
+        <div className="crack-row">
+          <img className="crack-cake" src={cs} alt="Crack Cake" />
+
+          <div className="crack-text-wrapper">
+            <h1 className="poppins-header">Did you hear that crack?</h1>
+            <h1 className="poppins-h3" style={{ borderTop: '2px dotted #1F4397', paddingTop: '25px' }}>The pastry with a perfect shatter.</h1>
+            <p className="poppins-text" style={{ marginTop: '-5px', fontSize: '22px' }}>
+              Get ready for pastries with a shatter so satisfying, you’ll taste it before the first bite.
+              Golden, flaky, and irresistibly addictive — Crack Cakes are almost here.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section className='container' ref={sectionRefs[4]} data-index={4}>
