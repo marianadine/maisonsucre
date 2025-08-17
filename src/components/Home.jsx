@@ -8,6 +8,7 @@ import home2 from '../imgs/home2.png';
 import home3 from '../imgs/home3.png';
 import home4 from '../imgs/home4.png';
 
+import sementbg from '../imgs/sementbg.png';
 import brownies from '../imgs/brownies.png';
 import croissant from '../imgs/croissant.png';
 import tiramisu from '../imgs/tiramisu.png';
@@ -136,15 +137,23 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='container' ref={sectionRefs[2]} data-index={2}>
-        <div>
-          <img className='pastry' src={cookies} />
-          <img className='pastry' src={brownies} />
-          <img className='pastry' src={waffles} />
-          <img className='pastry' src={croissant} />
-          <img className='pastry' src={tiramisu} />
+      <section
+        className="container"
+        style={{ backgroundImage: `url(${sementbg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        ref={sectionRefs[2]}
+        data-index={2}
+      >
+        <h1 style={{ margin: 0, fontSize: '24px', textAlign: 'center' }} className="poppins-header">MAISON SUCRÉ STUDIO</h1>
+        <p className="pastry-text">
+          Explore our pastries and desserts and discover a world where elegance meets indulgence.
+        </p>
+        <div className="pastry-container">
+          <img className="pastry" src={croissant} />
+          <img className="pastry" src={waffles} />
+          <img className="pastry" src={tiramisu} />
+          <img className="pastry" src={brownies} />
+          <img className="pastry" src={cookies} />
         </div>
-        <p className='pastry-text'>Explore our pastries and desserts and discover a world where elegance meets indulgence.</p>
       </section>
 
       <section className='container' ref={sectionRefs[3]} data-index={3}>
@@ -167,7 +176,7 @@ const Home = () => {
           <source src={bgvideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        
+
         <h1 className='poppins-header inquiry-header'>Contact Us</h1>
         <div className="inquiry-row">
           <p className="inquiry-text">
