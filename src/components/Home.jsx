@@ -57,6 +57,21 @@ const Home = () => {
     }
   ];
 
+  const [quantities, setQuantities] = useState(
+    pastries.reduce((acc, item) => {
+      acc[item.id] = 1; // default quantity 1
+      return acc;
+    }, {})
+  );
+
+  const handleIncrement = (id) => {
+    setQuantities(prev => ({ ...prev, [id]: prev[id] + 1 }));
+  };
+
+  const handleDecrement = (id) => {
+    setQuantities(prev => ({ ...prev, [id]: prev[id] > 1 ? prev[id] - 1 : 1 }));
+  };
+
   const [activeSection, setActiveSection] = useState(0);
   const sectionRefs = [useRef(), useRef(), useRef(), useRef(), useRef()];
 
@@ -129,9 +144,9 @@ const Home = () => {
                 <p className="menu-desc">{item.desc}</p>
 
                 <div className="menu-actions">
-                  <button className="icon-btn"><FaMinus /></button>
-                  <span className='qty-counter'>1</span>
-                  <button className="icon-btn"><FaPlus /></button>
+                  <button className="icon-btn" onClick={() => handleDecrement(item.id)}><FaMinus /></button>
+                  <span className='qty-counter'>{quantities[item.id]}</span>
+                  <button className="icon-btn" onClick={() => handleIncrement(item.id)}><FaPlus /></button>
                   <button className="preorder-btn">Add to Cart</button>
                 </div>
               </div>
