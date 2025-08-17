@@ -1,0 +1,10 @@
+.honeycomb {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.text-container {
+    width: 50%;
+}
