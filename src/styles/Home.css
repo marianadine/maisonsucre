@@ -8,6 +8,12 @@
     overflow: hidden;
 }
 
+.mainlogo {
+    width: 140px;
+    height: auto;
+    margin-bottom: -100px;
+}
+
 .center-text {
     position: relative;
     z-index: 2;

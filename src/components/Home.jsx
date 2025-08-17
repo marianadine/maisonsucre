@@ -3,6 +3,8 @@ import '../styles/CommonStyles.css';
 import '../styles/Home.css';
 import ScrollIndicator from './ScrollIndicator';
 
+import mslogo from '../imgs/mslogo.png';
+
 import home1 from '../imgs/home1.png';
 import home2 from '../imgs/home2.png';
 import home3 from '../imgs/home3.png';
@@ -105,6 +107,7 @@ const Home = () => {
         <img src={home2} alt="Right pastry" className="edge-img right" />
 
         <div className="center-text">
+          <img src={mslogo} alt="Maison Sucré Logo" className="mainlogo" />
           <h1 className="mainpagetext">Maison Sucré</h1>
           <p>A home for refined sweetness.</p>
         </div>
