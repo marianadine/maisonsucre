@@ -1,3 +1,53 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.center-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.edge-img {
+    position: absolute;
+    height: auto;
+    z-index: 1;
+}
+
+.edge-img.top {
+    top: 0;
+    left: 75%;
+    width: 400px;
+    transform: translateX(-50%);
+}
+
+.edge-img.bottom {
+    bottom: -25px;
+    left: 25%;
+    width: 400px;
+    transform: translateX(-50%);
+}
+
+.edge-img.left {
+    left: 0;
+    top: 20%;
+    width: 300px;
+    transform: translateY(-50%);
+}
+
+.edge-img.right {
+    right: -10px;
+    top: 70%;
+    width: 300px;
+    transform: translateY(-50%);
+}
+
 .pastry {
     width: 310px;
     margin: 10px 20px;
@@ -144,4 +194,75 @@
 
 .crack-text-wrapper h1 {
     margin-bottom: 15px;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.poppins-header.inquiry-header {
+    display: block;
+    width: 100%;
+    font-size: 96px;
+    color: #1F4397;
+    text-shadow: #1d1d1d8e 0px 0px 10px;
+    text-align: left;
+    margin-bottom: -210px;
+    margin-left: 150px;
+    z-index: 1;
+}
+
+.inquiry-row {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    background-color: #1F4397;
+    padding: 50px 100px;
+    border-radius: 60px 60px 0 0;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.inquiry-text {
+    margin: 0;
+    font-size: 22px;
+    color: #fff;
+    width: 70%;
+}
+
+.inquiry-icons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.inquiry-icons a {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    color: #fff;
+}
+
+.inquiry-icons a:hover {
+    background: #fff;
+    color: #1F4397;
+    transform: translateY(-2px);
 }

@@ -2,6 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import '../styles/CommonStyles.css';
 import '../styles/Home.css';
 import ScrollIndicator from './ScrollIndicator';
+
+import home1 from '../imgs/home1.png';
+import home2 from '../imgs/home2.png';
+import home3 from '../imgs/home3.png';
+import home4 from '../imgs/home4.png';
+
 import brownies from '../imgs/brownies.png';
 import croissant from '../imgs/croissant.png';
 import tiramisu from '../imgs/tiramisu.png';
@@ -15,7 +21,10 @@ import bs4 from '../imgs/bs4.png';
 
 import cs from '../imgs/cs.png';
 
-import { FaPlus, FaMinus } from "react-icons/fa";
+import bgvideo from '../imgs/bgvideo.mp4';
+
+import { FaPlus, FaMinus, FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 const Home = () => {
   const pastries = [
@@ -88,9 +97,16 @@ const Home = () => {
     <div className="scroll-container">
       <ScrollIndicator sections={5} activeSection={activeSection} />
 
-      <section className='container' ref={sectionRefs[0]} data-index={0}>
-        <h1 className='mainpagetext'>Maison Sucré</h1>
-        <p>A home for refined sweetness.</p>
+      <section className="container" ref={sectionRefs[0]} data-index={0}>
+        <img src={home4} alt="Top pastry" className="edge-img top" />
+        <img src={home1} alt="Left pastry" className="edge-img left" />
+        <img src={home3} alt="Bottom pastry" className="edge-img bottom" />
+        <img src={home2} alt="Right pastry" className="edge-img right" />
+
+        <div className="center-text">
+          <h1 className="mainpagetext">Maison Sucré</h1>
+          <p>A home for refined sweetness.</p>
+        </div>
       </section>
 
       <section className='container' ref={sectionRefs[1]} data-index={1}>
@@ -112,7 +128,7 @@ const Home = () => {
                   <button className="icon-btn"><FaMinus /></button>
                   <span className='qty-counter'>1</span>
                   <button className="icon-btn"><FaPlus /></button>
-                  <button className="preorder-btn">Pre-order</button>
+                  <button className="preorder-btn">Add to Cart</button>
                 </div>
               </div>
             </div>
@@ -147,7 +163,32 @@ const Home = () => {
       </section>
 
       <section className='container' ref={sectionRefs[4]} data-index={4}>
-        <h1>contact</h1>
+        <video className="bg-video" autoPlay loop muted playsInline>
+          <source src={bgvideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        <h1 className='poppins-header inquiry-header'>Contact Us</h1>
+        <div className="inquiry-row">
+          <p className="inquiry-text">
+            For inquiries, special requests, or a taste of Maison Sucré’s newest delights, you can reach us through our social channels below or send us a direct message—we’d love to hear from you.
+          </p>
+
+          <div className="inquiry-icons">
+            <a href="https://facebook.com/yourpage" aria-label="Facebook" target="_blank" rel="noreferrer">
+              <FaFacebookF />
+            </a>
+            <a href="mailto:hello@maisonsucre.com" aria-label="Gmail">
+              <SiGmail />
+            </a>
+            <a href="https://instagram.com/yourhandle" aria-label="Instagram" target="_blank" rel="noreferrer">
+              <FaInstagram />
+            </a>
+            <a href="https://tiktok.com/@yourhandle" aria-label="TikTok" target="_blank" rel="noreferrer">
+              <FaTiktok />
+            </a>
+          </div>
+        </div>
       </section>
     </div>
   )
