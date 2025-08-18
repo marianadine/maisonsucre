@@ -195,8 +195,7 @@ const Home = () => {
           Your browser does not support the video tag.
         </video>
 
-        <h1 className='poppins-header inquiry-header'>Contact Us</h1>
-        <div className="inquiry-row">
+        <div className="inquiry-row homepage">
           <p className="inquiry-text">
             For inquiries, special requests, or a taste of Maison Sucré’s newest delights, you can reach us through our social channels below or send us a direct message—we’d love to hear from you.
           </p>

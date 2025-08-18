@@ -157,9 +157,13 @@
     gap: 16px;
     background-color: #1F4397;
     padding: 50px 100px;
-    border-radius: 60px 60px 0 0;
+    border-radius: 50px 50px 0 0;
     box-sizing: border-box;
     z-index: 2;
+}
+
+.inquiry-row.homepage {
+    height: 200px;
 }
 
 .inquiry-text {
