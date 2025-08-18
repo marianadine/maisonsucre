@@ -35,7 +35,7 @@ const About = () => {
       <section className='container'>
         <h1 className='poppins-header abouts2'>Whispers of Butter & Sugar</h1>
 
-        <img className='ingredients' src={i1} alt="Maison Sucré" />
+        <img className='ingredients' src={honeycomb} alt="Maison Sucré" />
 
         <p className='poppins-text abouts2'>Every pastry begins as a delicate balance of the simplest treasures — golden butter, pure sugar, and the softest flour. At Maison Sucré, we let these honest ingredients speak for themselves, creating flavors that linger like a sweet memory.</p>
       </section>
