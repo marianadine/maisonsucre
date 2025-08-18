@@ -1,4 +1,11 @@
 .honeycomb {
+    width: 800px;
+    height: 100vh;
+    object-fit: cover;
+    border-radius: 0 20px 20px 0;
+}
+
+.ingredients {
     width: 500px;
     height: 500px;
     object-fit: cover;
@@ -16,7 +23,7 @@
 
 .mockup {
     width: 700px;
-    height: 520px;
+    height: 500px;
     margin-left: 300px;
     object-fit: cover;
     border-radius: 20px;

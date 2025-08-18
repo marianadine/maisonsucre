@@ -13,21 +13,21 @@ const About = () => {
   return (
     <div>
       <section className="container">
-        <div className='row-container'>
+        <div className='row-container aboutpage'>
+          <img className='honeycomb' src={honeycomb} alt="Maison Sucré" />
           <div className='text-container'>
             <h1 className='mainpagetext' style={{ fontWeight: '600' }}>Maison Sucré</h1>
             <p className='poppins-text' style={{ fontWeight: '600', fontStyle: 'italic' }}>/ meh-ZON soo-CRAY /</p>
             <p className='poppins-text'>— Sweet House or House of Sweets</p>
             <p className='poppins-text'>— A refined place where artisanal pastries and desserts are crafted with elegance and care. </p>
           </div>
-          <img className='honeycomb' src={honeycomb} alt="Maison Sucré" />
         </div>
       </section>
 
       <section className='container'>
         <h1 className='poppins-header abouts2'>Whispers of Butter & Sugar</h1>
 
-        <img className='honeycomb' src={honeycomb} alt="Maison Sucré" />
+        <img className='ingredients' src={honeycomb} alt="Maison Sucré" />
 
         <p className='poppins-text abouts2'>Every pastry begins as a delicate balance of the simplest treasures — golden butter, pure sugar, and the softest flour. At Maison Sucré, we let these honest ingredients speak for themselves, creating flavors that linger like a sweet memory.</p>
       </section>
