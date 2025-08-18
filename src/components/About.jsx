@@ -6,6 +6,12 @@ import packaging from '../imgs/packaging.png'
 import store from '../imgs/store.png'
 import tag from '../imgs/tag.png'
 
+import i1 from '../imgs/i1.jpg'
+import i2 from '../imgs/i2.jpg'
+import i3 from '../imgs/i3.jpg'
+import i4 from '../imgs/i4.jpg'
+import i5 from '../imgs/i5.jpg'
+
 import '../styles/About.css'
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
@@ -29,7 +35,7 @@ const About = () => {
       <section className='container'>
         <h1 className='poppins-header abouts2'>Whispers of Butter & Sugar</h1>
 
-        <img className='ingredients' src={honeycomb} alt="Maison Sucré" />
+        <img className='ingredients' src={i1} alt="Maison Sucré" />
 
         <p className='poppins-text abouts2'>Every pastry begins as a delicate balance of the simplest treasures — golden butter, pure sugar, and the softest flour. At Maison Sucré, we let these honest ingredients speak for themselves, creating flavors that linger like a sweet memory.</p>
       </section>
