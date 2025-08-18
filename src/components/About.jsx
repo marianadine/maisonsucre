@@ -2,6 +2,9 @@ import React from 'react'
 import honeycomb from '../imgs/honeycomb.jpg'
 import mockupborder from '../imgs/mockupborder.png'
 
+import packaging from '../imgs/packaging.png'
+import store from '../imgs/store.png'
+
 import '../styles/About.css'
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
@@ -29,11 +32,12 @@ const About = () => {
         <p className='poppins-text abouts2'>Every pastry begins as a delicate balance of the simplest treasures — golden butter, pure sugar, and the softest flour. At Maison Sucré, we let these honest ingredients speak for themselves, creating flavors that linger like a sweet memory.</p>
       </section>
 
+      <img className='store' src={store} alt="Maison Sucré" />
       <img className='mockupborder' src={mockupborder} alt="Maison Sucré" />
 
       <section style={{ marginBottom: '-600px' }} className='container'>
         <div className='row-container'>
-          <img className='mockup' src={honeycomb} alt="Maison Sucré" />
+          <img className='mockup' src={packaging} alt="Maison Sucré" />
           <div style={{ width: '60%' }} className='text-container'>
             <h1 style={{ textAlign: 'left', marginBottom: '-10px' }} className='poppins-header abouts2'>Wrapped in elegance, sealed with care.</h1>
 
