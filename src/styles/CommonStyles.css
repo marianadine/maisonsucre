@@ -73,13 +73,21 @@
     justify-content: center;
     align-items: center;
     gap: 100px;
-
 }
 
 .row-container.sweet-spotlights {
     margin: 0 200px;
     border: none;
     border-bottom: 2px dotted #1F4397;
+}
+
+.row-container.aboutpage {
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* text styles */
