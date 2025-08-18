@@ -3,13 +3,22 @@
     top: 0;
     left: 0;
     right: 0;
-    padding: 30px 50px;
+    padding: 20px 30px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+    background: #fff;
     z-index: 1000;
+    border-bottom: 1px solid #eee;
 }
 
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* Desktop Nav */
 .navbar-links {
     list-style: none;
     display: flex;
@@ -21,10 +30,9 @@
 
 .navbar-links li a {
     text-decoration: none;
-    color: inherit;
+    color: #696969;
     font-weight: 400;
     transition: color 0.3s ease-in;
-    color: #696969;
 }
 
 .navbar-links li a:hover {
@@ -34,4 +42,43 @@
 .navbar-links li a.active {
     font-weight: 600;
     text-decoration: underline;
+}
+
+/* Mobile Hamburger */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background: #000;
+    transition: 0.3s;
+}
+
+.navbar-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
 }
