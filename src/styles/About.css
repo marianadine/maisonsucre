@@ -10,15 +10,29 @@
     height: 500px;
     object-fit: cover;
     border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 .text-container {
     width: 50%;
+}
+
+.text-container.aboutpage {
+    width: 40%;
     background-color: #1F4397;
     padding: 50px;
-    margin-left: -300px;
+    margin-left: -250px;
     border-radius: 20px;
     box-shadow: 10px 0px 20px -5px #ccc;
+    position: relative;
+}
+
+.text-container .tag {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    width: 90px;
+    height: auto;
 }
 
 .abouts2 {

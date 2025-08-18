@@ -4,6 +4,7 @@ import mockupborder from '../imgs/mockupborder.png'
 
 import packaging from '../imgs/packaging.png'
 import store from '../imgs/store.png'
+import tag from '../imgs/tag.png'
 
 import '../styles/About.css'
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
@@ -15,11 +16,12 @@ const About = () => {
       <section className="container">
         <div className='row-container aboutpage'>
           <img className='honeycomb' src={honeycomb} alt="Maison Sucré" />
-          <div className='text-container'>
+          <div className='text-container aboutpage'>
             <h1 className='mainpagetext' style={{ fontWeight: '600', color: '#fff', marginTop: '20px' }}>Maison Sucré</h1>
             <p className='poppins-text' style={{ fontWeight: '600', fontStyle: 'italic', color: '#fff' }}>/ meh-ZON soo-CRAY /</p>
             <p className='poppins-text' style={{ color: '#fff' }}>— Sweet House or House of Sweets</p>
-            <p className='poppins-text' style={{ color: '#fff' }}>— A refined place where artisanal pastries and desserts are crafted with elegance and care. </p>
+            <p className='poppins-text' style={{ color: '#fff', width: '90%' }}>— A refined place where artisanal pastries and desserts are crafted with elegance and care. </p>
+            <img className='tag' src={tag} alt="Maison Sucré Tag" />
           </div>
         </div>
       </section>
