@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../styles/Pastries.css'
 import '../styles/CommonStyles.css'
 import { FaCartPlus } from "react-icons/fa";
+import { ChevronDown } from "lucide-react";
 
 import cookies1 from '../imgs/products/cookie1.png'
 import cookies2 from '../imgs/products/cookie2.png'
@@ -85,14 +86,22 @@ const Pastries = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <select value={filterCategory} onChange={(e) => setFilterCategory(e.target.value)}>
-          <option value="All">All</option>
-          <option value="Cookies">Cookies</option>
-          <option value="Croissants">Croissants</option>
-          <option value="Brownies">Brownies</option>
-          <option value="Tiramisu">Tiramisu</option>
-          <option value="Waffles">Waffles</option>
-        </select>
+
+        <div className="custom-select-wrapper">
+          <select
+            value={filterCategory}
+            onChange={(e) => setFilterCategory(e.target.value)}
+            className="custom-select"
+          >
+            <option value="All">All</option>
+            <option value="Cookies">Cookies</option>
+            <option value="Croissants">Croissants</option>
+            <option value="Brownies">Brownies</option>
+            <option value="Tiramisu">Tiramisu</option>
+            <option value="Waffles">Waffles</option>
+          </select>
+          <ChevronDown className="custom-select-icon" />
+        </div>
       </div>
 
       {/* Display Grid */}

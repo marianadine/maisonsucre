@@ -27,6 +27,34 @@
     font-size: 16px;
 }
 
+.custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+}
+
+.custom-select {
+    width: 100%;
+    padding: 8px 36px 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+    font-size: 16px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.custom-select-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #555;
+}
+
 /* Grid layout */
 .pastry-grid {
     display: grid;
@@ -104,6 +132,10 @@
     .pastry-controls {
         margin: 80px 15px 20px 15px;
         width: calc(100% - 30px);
+    }
+
+    .pastry-controls input {
+        width: 70%;
     }
 
     .poppins-text.pastries {
