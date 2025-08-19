@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../styles/Pastries.css'
 import '../styles/CommonStyles.css'
 import { FaCartPlus } from "react-icons/fa";
-import { ChevronDown, Search, Settings } from "lucide-react";
+import { ChevronDown, Search } from "lucide-react";
 
 import cookies1 from '../imgs/products/cookie1.png'
 import cookies2 from '../imgs/products/cookie2.png'
