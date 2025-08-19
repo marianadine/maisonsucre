@@ -12,8 +12,19 @@
     margin-left: 170px;
 }
 
-.pastry-controls input {
-    padding: 10px;
+.pastry-controls input:focus {
+    border-color: #1f4397;
+    box-shadow: 0 0 6px rgba(31, 67, 151, 0.4);
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-wrapper input {
+    padding: 10px 10px 10px 40px;
     width: 500px;
     border-radius: 8px;
     border: 1px solid #ccc;
@@ -21,9 +32,13 @@
     transition: all 0.3s ease;
 }
 
-.pastry-controls input:focus {
-    border-color: #1f4397;
-    box-shadow: 0 0 6px rgba(31, 67, 151, 0.4);
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: #666;
+    pointer-events: none;
+    width: 18px;
+    height: 18px;
 }
 
 /* Custom Select */
@@ -40,7 +55,7 @@
 
 .custom-select {
     width: 100%;
-    padding: 8px 36px 8px 12px;
+    padding: 10px 36px 10px 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
     background: white;

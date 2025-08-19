@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../styles/Pastries.css'
 import '../styles/CommonStyles.css'
 import { FaCartPlus } from "react-icons/fa";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Search, Settings } from "lucide-react";
 
 import cookies1 from '../imgs/products/cookie1.png'
 import cookies2 from '../imgs/products/cookie2.png'
@@ -80,12 +80,15 @@ const Pastries = () => {
     <div>
       {/* Search and Filter */}
       <div className="pastry-controls">
-        <input
-          type="text"
-          placeholder="Search pastries..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        <div className="search-wrapper">
+          <Search className="search-icon" />
+          <input
+            type="text"
+            placeholder="Search pastries..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
 
         <div className="custom-select-wrapper">
           <select
