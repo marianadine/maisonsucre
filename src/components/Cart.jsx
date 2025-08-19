@@ -5,7 +5,7 @@ import { Trash2 } from "lucide-react"
 
 const Cart = () => {
   const cartItems = [
-    { name: "Cookies", desc: "Lorem ipsum dolor sit amet, consectetur", price: 129, qty: 3 },
+    { name: "Cookies", desc: "Lorem ipsum dolor sit amet, consectetur", price: 159, qty: 3 },
     { name: "Cookies", desc: "Lorem ipsum dolor sit amet, consectetur", price: 129, qty: 3 },
     { name: "Cookies", desc: "Lorem ipsum dolor sit amet, consectetur", price: 129, qty: 3 },
     { name: "Cookies", desc: "Lorem ipsum dolor sit amet, consectetur", price: 129, qty: 3 },
@@ -62,15 +62,15 @@ const Cart = () => {
             <p><strong>Name</strong><br /> Nadine Rufo</p>
 
             <h3>Total</h3>
-            <p>Number of Items <span>{totalItems}</span></p>
+            <p style={{ marginBottom: '-10px' }}>Number of Items <span>{totalItems}</span></p>
             <p>Price <span>PHP {totalPrice}</span></p>
 
-            <h3>We Accept</h3>
+            <h4>We Accept</h4>
             <div className="payment-method">Gcash <p>Lorem ipsum dolor sit amet</p></div>
             <div className="payment-method">GoTyme <p>Lorem ipsum dolor sit amet</p></div>
             <div className="payment-method">SeaBank <p>Lorem ipsum dolor sit amet</p></div>
 
-            <button className="preorder-btn">Pre-order</button>
+            <button className="cartpreorder-btn">Pre-order</button>
           </div>
         </div>
       </section>
