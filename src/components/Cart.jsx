@@ -18,8 +18,8 @@ const Cart = () => {
     <div>
       <section className='container cart-section'>
         <h1 className='thin-poppins-text'>Your Cart</h1>
-        <p className='poppins-text' style={{ marginTop: '-20px', fontSize: '18px', color: '#777' }}>
-          Shop at our bakery with ease — delicious pastries, freshly made, ready for you.
+        <p className='poppins-text' style={{ marginTop: '-30px', fontSize: '16px', color: '#777', width: '60%' }}>
+          Shop at our bakery with ease — delicious pastries, freshly made each day with the finest ingredients, baked to perfection, and crafted to bring warmth and joy to every bite. Experience convenience and indulgence, all in one place.
         </p>
 
         <div className="cart-layout">
