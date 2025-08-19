@@ -118,7 +118,7 @@ const Pastries = () => {
                 <p className="price">{item.price}</p>
               </div>
               <p className='pastry-desc'>{item.desc}</p>
-              {/* <button className="add-cart"><FaCartPlus /></button> */}
+              {/* <button className="add-cart"><FaCartPlus /> Add to Cart</button> */}
             </div>
           ))}
         </div>
