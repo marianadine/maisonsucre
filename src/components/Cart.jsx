@@ -14,6 +14,9 @@ const Cart = () => {
     { id: 7, name: "Cupcake", desc: "Vanilla cupcakes with buttercream frosting", price: 89, qty: 5 },
   ])
 
+  const [selectedPayment, setSelectedPayment] = useState(null)
+
+
   const increaseQty = (id) => {
     setCartItems(cartItems.map(item =>
       item.id === id ? { ...item, qty: item.qty + 1 } : item
@@ -85,10 +88,20 @@ const Cart = () => {
             <p>Price <span>PHP {totalPrice}</span></p>
 
             <h4>We Accept</h4>
-            <div className="payment-method">Gcash <p>Secure and fast mobile payments</p></div>
-            <div className="payment-method">GoTyme <p>Easy card and wallet integration</p></div>
-            <div className="payment-method">SeaBank <p>Direct debit from your bank account</p></div>
-
+            {["Gcash", "GoTyme", "SeaBank"].map((method) => (
+              <div
+                key={method}
+                className={`payment-method ${selectedPayment === method ? "selected" : ""}`}
+                onClick={() => setSelectedPayment(method)}
+              >
+                {method}
+                <p>
+                  {method === "Gcash" && "Secure and fast mobile payments"}
+                  {method === "GoTyme" && "Easy card and wallet integration"}
+                  {method === "SeaBank" && "Direct debit from your bank account"}
+                </p>
+              </div>
+            ))}
             <button className="cartpreorder-btn">Pre-order</button>
           </div>
         </div>

@@ -192,6 +192,11 @@
     color: #777;
 }
 
+.payment-method.selected {
+    border-color: #1f4397;
+    background: #f0f5ff;
+}
+
 .cartpreorder-btn {
     margin-top: 15px;
     padding: 12px;
