@@ -1,3 +1,6 @@
+/* ============================= */
+/*   CART PAGE BASE STYLES       */
+/* ============================= */
 .container.cart-section {
     justify-content: flex-start;
     align-items: flex-start;
@@ -19,7 +22,6 @@
     width: calc(100% - 250px);
     height: auto;
 }
-
 
 .cart-layout {
     display: flex;
@@ -187,4 +189,97 @@
 .cartpreorder-btn:hover {
     background: #1f4397;
     color: white;
+}
+
+/* ============================= */
+/*        MOBILE RESPONSIVE      */
+/* ============================= */
+@media (max-width: 1024px) {
+    .cart-section {
+        margin: 40px 20px;
+        width: calc(100% - 40px);
+    }
+
+    .thin-poppins-text {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cart-summary {
+        border-left: none;
+        border-top: 1px dashed #ccc;
+        padding-left: 0;
+        padding-top: 20px;
+    }
+
+    .cart-header,
+    .cart-row {
+        grid-template-columns: 1fr 1fr;
+        font-size: 13px;
+    }
+
+    .cart-header {
+        display: none;
+        /* hide header on small screens */
+    }
+
+    .cart-row {
+        grid-template-columns: 1fr auto;
+        grid-row-gap: 10px;
+    }
+
+    .product-details {
+        gap: 10px;
+    }
+
+    .product-photo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .thin-poppins-text {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-section {
+        margin: 20px 10px;
+        padding: 10px;
+        width: calc(100% - 20px);
+    }
+
+    .thin-poppins-text {
+        font-size: 24px;
+    }
+
+    .cart-row {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+
+    .product-photo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cart-summary h3,
+    .cart-summary h4 {
+        font-size: 14px;
+    }
+
+    .cart-summary p {
+        font-size: 12px;
+    }
+
+    .cartpreorder-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
 }
