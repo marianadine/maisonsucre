@@ -2,6 +2,8 @@ import React from 'react'
 import honeycomb from '../imgs/honeycomb.jpg'
 import mockupborder from '../imgs/mockupborder.png'
 
+import honeycombcroissant from '../imgs/honeycombcroissant.mp4'
+
 import packaging from '../imgs/packaging.png'
 import store from '../imgs/store.png'
 import tag from '../imgs/tag.png'
@@ -21,7 +23,16 @@ const About = () => {
     <div>
       <section className="container">
         <div className='row-container aboutpage'>
-          <img className='honeycomb' src={honeycomb} alt="Maison Sucré" />
+          <video
+            className="honeycomb"
+            src={honeycombcroissant}
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            Your browser does not support the video tag.
+          </video>
           <div className='text-container aboutpage'>
             <h1 className='mainpagetext' style={{ fontWeight: '600', color: '#fff', marginTop: '20px' }}>Maison Sucré</h1>
             <p className='poppins-text' style={{ fontWeight: '600', fontStyle: 'italic', color: '#fff' }}>/ meh-ZON soo-CRAY /</p>
