@@ -58,7 +58,6 @@
     transition: all 0.6s ease;
 }
 
-
 .carousel-track {
     position: relative;
     width: 100%;
@@ -204,30 +203,22 @@
         margin-bottom: -5px;
     }
 
-    /* Fix carousel layout */
-
-    /* .carousel {
-        flex-direction: column;
-        height: auto;
+    .container.ingredients-section {
+        height: 700px;
     }
 
     .carousel-item {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none !important;
-        margin: 10px auto;
-        width: 90%;
-        height: auto;
-        filter: none !important;
-        scale: 1 !important;
-        z-index: 1 !important;
+        top: 10%;
+        left: 33%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
     }
 
     .carousel-arrow {
-        position: static;
-        margin: 10px;
-    } */
+        position: absolute;
+        top: 25%;
+    }
 
     .poppins-header.abouts2 {
         font-size: 20px;
@@ -237,6 +228,7 @@
     .poppins-text.abouts2 {
         font-size: 13px;
         width: 85%;
+        margin-top: -200px;
     }
 
     .mockup {

@@ -71,12 +71,13 @@ const About = () => {
           <div className="carousel-track">
             {images.map((img, i) => {
               const offset = (i - index + images.length) % images.length;
+              const isMobile = window.innerWidth <= 768;
 
               let xOffset = 0;
-              if (offset === 1) xOffset = 300;    // right next
-              if (offset === 2) xOffset = 500;    // far right
-              if (offset === 4) xOffset = -300;   // left next
-              if (offset === 3) xOffset = -500;   // far left
+              if (offset === 1) xOffset = isMobile ? 60 : 300;    // right next
+              if (offset === 2) xOffset = isMobile ? 120 : 500;    // far right
+              if (offset === 4) xOffset = isMobile ? -60 : -300;  // left next
+              if (offset === 3) xOffset = isMobile ? -120 : -500;  // far left
 
               const isCenter = offset === 0;
               const isNear = offset === 1 || offset === 4; // next to center
