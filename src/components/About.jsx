@@ -18,8 +18,6 @@ import i5 from '../imgs/i5.jpg'
 import layers from '../imgs/layers.png'
 
 import '../styles/About.css'
-import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const About = () => {
