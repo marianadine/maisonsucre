@@ -15,6 +15,8 @@ import i3 from '../imgs/i3.jpg'
 import i4 from '../imgs/i4.jpg'
 import i5 from '../imgs/i5.jpg'
 
+import layers from '../imgs/layers.png'
+
 import '../styles/About.css'
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
@@ -47,6 +49,8 @@ const About = () => {
           </div>
         </div>
       </section>
+      <img className='mockupborder' src={mockupborder} alt="Maison Sucré" />
+
 
       <section className='container'>
         <h1 className='poppins-header abouts2'>Whispers of Butter & Sugar</h1>
@@ -116,9 +120,8 @@ const About = () => {
       </section>
 
       <img className='store' src={store} alt="Maison Sucré" />
-      <img className='mockupborder' src={mockupborder} alt="Maison Sucré" />
 
-      <section style={{ marginBottom: '-600px' }} className='container'>
+      <section className='container'>
         <div className='row-container'>
           <img className='mockup' src={packaging} alt="Maison Sucré" />
           <div style={{ width: '60%' }} className='text-container'>
@@ -129,29 +132,18 @@ const About = () => {
         </div>
       </section>
 
-      <section className='container'>
-        <h1 className='poppins-header inquiry-header'>Contact Us</h1>
-        <div className="inquiry-row">
-          <p className="inquiry-text">
-            For inquiries, special requests, or a taste of Maison Sucré’s newest delights, you can reach us through our social channels below or send us a direct message—we’d love to hear from you.
+      <section className='container layers-section'>
+        <img className='layers' src={layers} alt="Maison Sucré Layers" />
+        <div className="text-overlay">
+          <h1 className='poppins-header abouts2'>Layers of Passion</h1>
+          <p className='poppins-text abouts2'>
+            From the delicate flake of a croissant to the rich cream of a tiramisu,
+            every pastry at Maison Sucré is built in layers — of flavor, texture, and care.
+            Each bite unfolds like a story, crafted to delight from start to finish.
           </p>
-
-          <div className="inquiry-icons">
-            <a href="https://facebook.com/yourpage" aria-label="Facebook" target="_blank" rel="noreferrer">
-              <FaFacebookF />
-            </a>
-            <a href="mailto:hello@maisonsucre.com" aria-label="Gmail">
-              <SiGmail />
-            </a>
-            <a href="https://instagram.com/yourhandle" aria-label="Instagram" target="_blank" rel="noreferrer">
-              <FaInstagram />
-            </a>
-            <a href="https://tiktok.com/@yourhandle" aria-label="TikTok" target="_blank" rel="noreferrer">
-              <FaTiktok />
-            </a>
-          </div>
         </div>
       </section>
+
     </div>
   )
 }
