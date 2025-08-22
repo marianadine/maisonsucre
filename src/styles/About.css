@@ -71,7 +71,11 @@
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.7);
     border: none;
-    padding: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     cursor: pointer;
     transition: background 0.3s ease;
@@ -191,7 +195,8 @@
     }
 
     /* Fix carousel layout */
-    .carousel {
+
+    /* .carousel {
         flex-direction: column;
         height: auto;
     }
@@ -212,12 +217,16 @@
     .carousel-arrow {
         position: static;
         margin: 10px;
+    } */
+
+    .poppins-header.abouts2 {
+        font-size: 20px;
+        width: 100%;
     }
 
-    .abouts2 {
-        width: 100%;
-        text-align: center;
-        margin: 20px 0;
+    .poppins-text.abouts2 {
+        font-size: 13px;
+        width: 85%;
     }
 
     .mockup {
@@ -228,11 +237,13 @@
 
     .store {
         width: 100%;
-        height: auto;
+        height: 180px;
+        object-fit: cover;
+        margin-bottom: -10px;
     }
 
     .mockupborder {
-        height: auto;
+        height: 80px;
     }
 
     .container.layers-section .text-overlay {

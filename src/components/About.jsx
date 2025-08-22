@@ -56,7 +56,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className='container'>
+      <section className='container ingredients-section'>
         <h1 className='poppins-header abouts2'>Whispers of Butter & Sugar</h1>
 
         <div className="carousel">
