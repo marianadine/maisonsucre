@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/Pastries.css'
 import '../styles/CommonStyles.css'
-import { FaCartPlus } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import { ChevronDown, Search } from "lucide-react";
 
 import cookies1 from '../imgs/products/cookie1.png'
@@ -252,6 +252,10 @@ const Pastries = () => {
     setTooltip({ ...tooltip, visible: false });
   };
 
+  const handleAddToCart = (item) => {
+    console.log("Added to cart:", item.name);
+  };
+
   return (
     <div>
       {/* Search and Filter */}
@@ -297,13 +301,24 @@ const Pastries = () => {
               onMouseLeave={handleMouseLeave}
             >
               <img src={item.img} alt={item.name} />
+
               <div className="pastry-info">
                 <h2>{item.name}</h2>
                 <p className="price">{item.price}</p>
               </div>
+
               <p className='pastry-desc'>{item.desc}</p>
+
+              <button
+                className="add-to-cart-btn"
+                onClick={() => handleAddToCart(item)}
+                aria-label={`Add ${item.name} to cart`}
+              >
+                <FaShoppingCart />
+              </button>
             </div>
           ))}
+
         </div>
       </section>
 
