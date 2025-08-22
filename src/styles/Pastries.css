@@ -217,6 +217,39 @@
     left: 0;
 }
 
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-box {
+    pointer-events: none;
+    position: absolute;
+    max-width: 240px;
+    background-color: #fff;
+    color: #333;
+    text-align: left;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 99999;
+    transition: opacity 0.2s ease;
+}
+
+.tooltip-box h4 {
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f4397;
+}
+
+.tooltip-box p {
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    color: #555;
+}
+
+
 @media (max-width: 768px) {
     .pastry-controls {
         margin: 80px 15px 20px 15px;
