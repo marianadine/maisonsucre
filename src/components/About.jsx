@@ -28,7 +28,15 @@ const About = () => {
 
   return (
     <div>
-      <section className="container">
+      <section
+        className="container about-container"
+        style={{
+          backgroundImage: `url(${mockupborder})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
         <div className='row-container aboutpage'>
           <video
             className="honeycomb"
@@ -49,8 +57,6 @@ const About = () => {
           </div>
         </div>
       </section>
-      <img className='mockupborder' src={mockupborder} alt="Maison Sucré" />
-
 
       <section className='container'>
         <h1 className='poppins-header abouts2'>Whispers of Butter & Sugar</h1>
@@ -120,6 +126,7 @@ const About = () => {
       </section>
 
       <img className='store' src={store} alt="Maison Sucré" />
+      <img className='mockupborder' src={mockupborder} alt="Maison Sucré" />
 
       <section className='container'>
         <div className='row-container'>
@@ -135,7 +142,7 @@ const About = () => {
       <section className='container layers-section'>
         <img className='layers' src={layers} alt="Maison Sucré Layers" />
         <div className="text-overlay">
-          <h1 className='poppins-header abouts2'>Layers of Passion</h1>
+          <h1 className='poppins-header abouts2'>Layers of goodness.</h1>
           <p className='poppins-text abouts2'>
             From the delicate flake of a croissant to the rich cream of a tiramisu,
             every pastry at Maison Sucré is built in layers — of flavor, texture, and care.
