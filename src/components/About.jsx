@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from "framer-motion";
 import honeycomb from '../imgs/honeycomb.jpg'
 import mockupborder from '../imgs/mockupborder.png'
 
@@ -17,8 +18,12 @@ import i5 from '../imgs/i5.jpg'
 import '../styles/About.css'
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const About = () => {
+  const images = [i1, i2, i3, i4, i5];
+  const [index, setIndex] = useState(0);
+
   return (
     <div>
       <section className="container">
@@ -46,7 +51,66 @@ const About = () => {
       <section className='container'>
         <h1 className='poppins-header abouts2'>Whispers of Butter & Sugar</h1>
 
-        <img className='ingredients' src={honeycomb} alt="Maison Sucré" />
+        <div className="carousel">
+          {/* Left Arrow */}
+          <button
+            onClick={() => setIndex((prev) => (prev - 1 + images.length) % images.length)}
+            className="carousel-arrow left-arrow"
+          >
+            <ChevronLeft size={24} />
+          </button>
+
+          <div className="carousel-track">
+            {images.map((img, i) => {
+              const offset = (i - index + images.length) % images.length;
+
+              let xOffset = 0;
+              if (offset === 1) xOffset = 300;    // right next
+              if (offset === 2) xOffset = 500;    // far right
+              if (offset === 4) xOffset = -300;   // left next
+              if (offset === 3) xOffset = -500;   // far left
+
+              const isCenter = offset === 0;
+              const isNear = offset === 1 || offset === 4; // next to center
+              const isFar = offset === 2 || offset === 3;  // far left/right
+
+              let zIndex = 0;
+              if (isCenter) zIndex = 5;
+              else if (isNear) zIndex = 3;
+              else zIndex = 1;
+
+              let scale = 0.9;
+              if (isCenter) scale = 1.1;
+              if (isFar) scale = 0.7;
+
+              return (
+                <motion.img
+                  key={i}
+                  src={img}
+                  alt="Maison Sucré"
+                  className="carousel-item"
+                  initial={false}
+                  animate={{
+                    x: xOffset,
+                    scale: scale,
+                    opacity: 1,
+                    filter: isCenter ? "blur(0px)" : "blur(2px)",
+                    zIndex: zIndex,
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              );
+            })}
+          </div>
+
+          {/* Right Arrow */}
+          <button
+            onClick={() => setIndex((prev) => (prev + 1) % images.length)}
+            className="carousel-arrow right-arrow"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
 
         <p className='poppins-text abouts2'>Every pastry begins as a delicate balance of the simplest treasures — golden butter, pure sugar, and the softest flour. At Maison Sucré, we let these honest ingredients speak for themselves, creating flavors that linger like a sweet memory.</p>
       </section>
