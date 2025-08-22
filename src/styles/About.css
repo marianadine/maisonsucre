@@ -150,3 +150,103 @@
     text-align: left;
     width: 1005px;
 }
+
+@media (max-width: 480px) {
+
+    .honeycomb {
+        display: none;
+    }
+
+    .text-container.aboutpage {
+        width: 100%;
+        margin: 50px 30px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 12px;
+        box-shadow: none;
+    }
+
+    .text-container.aboutpage .tag {
+        display: none;
+    }
+
+    .mainpagetext.about {
+        font-size: 38px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .poppins-text.about,
+    .poppins-text.abouttag {
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .poppins-text.about.subtitle {
+        margin-bottom: -5px;
+    }
+
+    /* Fix carousel layout */
+    .carousel {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .carousel-item {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none !important;
+        margin: 10px auto;
+        width: 90%;
+        height: auto;
+        filter: none !important;
+        scale: 1 !important;
+        z-index: 1 !important;
+    }
+
+    .carousel-arrow {
+        position: static;
+        margin: 10px;
+    }
+
+    .abouts2 {
+        width: 100%;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .mockup {
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .store {
+        width: 100%;
+        height: auto;
+    }
+
+    .mockupborder {
+        height: auto;
+    }
+
+    .container.layers-section .text-overlay {
+        bottom: 20px;
+        left: 20px;
+        max-width: 90%;
+    }
+
+    .container.layers-section .text-overlay h1 {
+        font-size: 28px;
+    }
+
+    .container.layers-section .text-overlay p {
+        font-size: 16px;
+        width: 100%;
+    }
+}
