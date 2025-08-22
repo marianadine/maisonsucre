@@ -28,6 +28,9 @@ import tiramisu2 from '../imgs/products/tiramisu2.png'
 import waffle1 from '../imgs/products/waffle1.png'
 import waffle2 from '../imgs/products/waffle2.png'
 
+import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+
 const Pastries = () => {
   const cookies = [
     {
@@ -301,6 +304,30 @@ const Pastries = () => {
               <p className='pastry-desc'>{item.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section style={{ marginTop: '-450px', zIndex: '-1' }} className='container'>
+        <h1 className='poppins-header inquiry-header'>Contact Us</h1>
+        <div className="inquiry-row">
+          <p className="inquiry-text">
+            For inquiries, special requests, or a taste of Maison Sucré’s newest delights, you can reach us through our social channels below or send us a direct message—we’d love to hear from you.
+          </p>
+
+          <div className="inquiry-icons">
+            <a href="https://facebook.com/yourpage" aria-label="Facebook" target="_blank" rel="noreferrer">
+              <FaFacebookF />
+            </a>
+            <a href="mailto:hello@maisonsucre.com" aria-label="Gmail">
+              <SiGmail />
+            </a>
+            <a href="https://instagram.com/yourhandle" aria-label="Instagram" target="_blank" rel="noreferrer">
+              <FaInstagram />
+            </a>
+            <a href="https://tiktok.com/@yourhandle" aria-label="TikTok" target="_blank" rel="noreferrer">
+              <FaTiktok />
+            </a>
+          </div>
         </div>
       </section>
 
