@@ -127,12 +127,12 @@ const About = () => {
       <img className='mockupborder' src={mockupborder} alt="Maison Sucré" />
 
       <section className='container'>
-        <div className='row-container'>
+        <div className='row-container abouts3'>
           <img className='mockup' src={packaging} alt="Maison Sucré" />
-          <div style={{ width: '60%' }} className='text-container'>
-            <h1 style={{ textAlign: 'left', marginBottom: '-10px' }} className='poppins-header abouts2'>Wrapped in elegance, sealed with care.</h1>
+          <div style={{ width: '60%' }} className='text-container abouts3'>
+            <h1 style={{ textAlign: 'left', marginBottom: '-10px' }} className='poppins-header abouts3'>Wrapped in elegance, sealed with care.</h1>
 
-            <p style={{ textAlign: 'justify' }} className='poppins-text abouts2'>At Maison Sucré, we handle our pastries with the same care we put into baking them. Every creation is placed in thoughtfully designed packaging that preserves freshness, protects delicate layers, and reflects our signature elegance. From the buttery flake of a croissant to the silky cream of a tiramisu, each piece is wrapped like a gift — because every bite should feel special before you even taste it.</p>
+            <p style={{ textAlign: 'justify' }} className='poppins-text abouts3'>At Maison Sucré, we handle our pastries with the same care we put into baking them. Every creation is placed in thoughtfully designed packaging that preserves freshness, protects delicate layers, and reflects our signature elegance. From the buttery flake of a croissant to the silky cream of a tiramisu, each piece is wrapped like a gift — because every bite should feel special before you even taste it.</p>
           </div>
         </div>
       </section>
