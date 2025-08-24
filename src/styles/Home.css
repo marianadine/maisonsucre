@@ -150,6 +150,12 @@
     gap: 15px;
 }
 
+.qty-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .icon-btn {
     width: 35px;
     height: 35px;
@@ -220,4 +226,163 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
+}
+
+/* -------- Mobile Responsive -------- */
+@media (max-width: 600px) {
+    .mainlogo {
+        width: 100px;
+        margin-bottom: -20px;
+    }
+
+    .mainpagetext {
+        font-size: 32px;
+    }
+
+    .poppins-header {
+        font-size: 20px !important;
+    }
+
+    .poppins-text {
+        font-size: 15px !important;
+    }
+
+    .edge-img.top,
+    .edge-img.bottom,
+    .edge-img.left,
+    .edge-img.right {
+        display: none;
+    }
+
+    .row-container.sweet-spotlights {
+        margin: 0 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0px;
+    }
+
+    .row-container.sweet-spotlights .poppins-header {
+        font-size: 20px !important;
+        text-align: left;
+    }
+
+    .row-container.sweet-spotlights .poppins-text {
+        font-size: 12px !important;
+        text-align: left !important;
+        margin-top: -10px;
+    }
+
+    .container.sweet-spotlights {
+        width: 100%;
+        padding: 15px;
+        margin: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .menu-card {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .menu-img {
+        max-width: 130px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .menu-title {
+        font-size: 15px;
+    }
+
+    .menu-desc {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .menu-info {
+        align-items: center;
+    }
+
+    .menu-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .preorder-btn {
+        width: 100%;
+        max-width: 200px;
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+
+    .icon-btn {
+        font-size: 10px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .pastry-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pastry {
+        width: 45% !important;
+        margin: 10px;
+    }
+
+    .pastry-container .pastry:nth-child(2),
+    .pastry-container .pastry:nth-child(4) {
+        margin-top: 10px;
+    }
+
+    .pastry-text {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    /* Crack Cake section */
+    .crack-row {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .crack-cake {
+        width: 85%;
+        max-width: 320px;
+    }
+
+    .crack-text-wrapper {
+        max-width: 95%;
+        text-align: center;
+    }
+
+    /* Inquiry / social icons */
+    .inquiry-row.homepage {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .inquiry-icons {
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .inquiry-icons a {
+        font-size: 20px;
+    }
 }

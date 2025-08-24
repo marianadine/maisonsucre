@@ -128,7 +128,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='container' ref={sectionRefs[1]} data-index={1}>
+      <section className='container sweet-spotlights' ref={sectionRefs[1]} data-index={1}>
         <div className='row-container sweet-spotlights'>
           <h3 className='poppins-header'>Sweet Spotlights</h3>
           <p className='poppins-text' style={{ textAlign: 'right' }}>From flaky layers to decadent bites, these are the pastries that have captured hearts and taste buds alike.</p>
@@ -144,11 +144,14 @@ const Home = () => {
                 <p className="menu-desc">{item.desc}</p>
 
                 <div className="menu-actions">
-                  <button className="icon-btn" onClick={() => handleDecrement(item.id)}><FaMinus /></button>
-                  <span className='qty-counter'>{quantities[item.id]}</span>
-                  <button className="icon-btn" onClick={() => handleIncrement(item.id)}><FaPlus /></button>
+                  <div className="qty-group">
+                    <button className="icon-btn" onClick={() => handleDecrement(item.id)}><FaMinus /></button>
+                    <span className='qty-counter'>{quantities[item.id]}</span>
+                    <button className="icon-btn" onClick={() => handleIncrement(item.id)}><FaPlus /></button>
+                  </div>
                   <button className="preorder-btn">Add to Cart</button>
                 </div>
+
               </div>
             </div>
           ))}
