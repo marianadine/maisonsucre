@@ -336,37 +336,48 @@
         display: none;
     }
 
-    /* Crack Cake section */
+    section.container:nth-of-type(4) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+
     .crack-row {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         gap: 20px;
         padding: 15px;
+        text-align: center;
     }
 
     .crack-cake {
         width: 85%;
         max-width: 320px;
+        margin: 0 auto;
     }
 
     .crack-text-wrapper {
         max-width: 95%;
         text-align: center;
+        margin: 0 auto;
     }
 
-    /* Inquiry / social icons */
-    .inquiry-row.homepage {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-        padding: 20px;
+    .crack-text-wrapper h1.poppins-header {
+        font-size: 24px !important;
     }
 
-    .inquiry-icons {
-        justify-content: center;
-        gap: 18px;
+    .crack-text-wrapper h1.poppins-h3 {
+        font-size: 15px;
+        margin-top: -25px;
+        border-top: none !important;
     }
 
-    .inquiry-icons a {
-        font-size: 20px;
+    .crack-text-wrapper p.poppins-text {
+        font-size: 14px !important;
     }
 }
