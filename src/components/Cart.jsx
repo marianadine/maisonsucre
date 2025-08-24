@@ -6,44 +6,42 @@ import { Trash2 } from "lucide-react"
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
+import { useCart } from "../context/CartContext";
+
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Cookies", desc: "Chocolate chip cookies freshly baked", price: 159, qty: 3 },
-    { id: 2, name: "Brownies", desc: "Rich and fudgy chocolate brownies", price: 129, qty: 2 },
-    { id: 3, name: "Croissant", desc: "Buttery and flaky croissant", price: 99, qty: 1 },
-    { id: 4, name: "Muffins", desc: "Blueberry muffins with crumble topping", price: 149, qty: 2 },
-    { id: 5, name: "Cinnamon Roll", desc: "Sweet cinnamon swirls with glaze", price: 129, qty: 4 },
-    { id: 6, name: "Cupcake", desc: "Vanilla cupcakes with buttercream frosting", price: 89, qty: 5 },
-  ])
+  const { cartItems, increaseQty, decreaseQty, deleteItem } = useCart();
+  const [selectedPayment, setSelectedPayment] = useState(null);
 
-  const [selectedPayment, setSelectedPayment] = useState(null)
+  const parsePrice = (price) => {
+    if (!price) return 0;
+    return parseFloat(price.replace("PHP", "").trim());
+  };
 
+  const totalItems = cartItems?.length
+    ? cartItems.reduce((acc, item) => acc + Number(item.qty), 0)
+    : 0;
 
-  const increaseQty = (id) => {
-    setCartItems(cartItems.map(item =>
-      item.id === id ? { ...item, qty: item.qty + 1 } : item
-    ))
-  }
+  const totalPrice = cartItems?.length
+    ? cartItems.reduce((acc, item) => acc + parsePrice(item.price) * Number(item.qty), 0)
+    : 0;
 
-  const decreaseQty = (id) => {
-    setCartItems(cartItems.map(item =>
-      item.id === id && item.qty > 1 ? { ...item, qty: item.qty - 1 } : item
-    ))
-  }
-
-  const deleteItem = (id) => {
-    setCartItems(cartItems.filter(item => item.id !== id))
-  }
-
-  const totalItems = cartItems.reduce((acc, item) => acc + item.qty, 0)
-  const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
 
   return (
     <div>
       <section className='container cart-section'>
         <h1 className='thin-poppins-text'>Your Cart</h1>
-        <p className='poppins-text' style={{ marginTop: '-30px', fontSize: '16px', color: '#777', width: '60%' }}>
-          Shop at our bakery with ease — delicious pastries, freshly made each day with the finest ingredients, baked to perfection, and crafted to bring warmth and joy to every bite.
+        <p
+          className='poppins-text'
+          style={{
+            marginTop: '-30px',
+            fontSize: '16px',
+            color: '#777',
+            width: '60%'
+          }}
+        >
+          Shop at our bakery with ease — delicious pastries, freshly made each
+          day with the finest ingredients, baked to perfection, and crafted to
+          bring warmth and joy to every bite.
         </p>
 
         <div className="cart-layout">
@@ -56,28 +54,34 @@ const Cart = () => {
               <span>Total</span>
             </div>
 
-            {cartItems.map((item) => (
-              <div className="cart-row" key={item.id}>
-                <div className="product-details">
-                  <div className="product-photo"></div>
-                  <div>
-                    <h3 className='pastry-item-name'>{item.name}</h3>
-                    <p className='pastry-item-desc'>{item.desc}</p>
-                  </div>
-                </div>
-
-                <div className="quantity-controls">
-                  <button onClick={() => decreaseQty(item.id)}>-</button>
-                  <span>{item.qty}</span>
-                  <button onClick={() => increaseQty(item.id)}>+</button>
-                </div>
-
-                <p>PHP {item.price}</p>
-                <p>PHP {item.price * item.qty}</p>
-
-                <Trash2 className="delete-icon" onClick={() => deleteItem(item.id)} />
+            {cartItems.length === 0 ? (
+              <div className="empty-cart">
+                <p>No items added to cart.</p>
               </div>
-            ))}
+            ) : (
+              cartItems.map((item) => (
+                <div className="cart-row" key={item.id}>
+                  <div className="product-details">
+                    <div className="product-photo"></div>
+                    <div>
+                      <h3 className='pastry-item-name'>{item.name}</h3>
+                      <p className='pastry-item-desc'>{item.desc}</p>
+                    </div>
+                  </div>
+
+                  <div className="quantity-controls">
+                    <button onClick={() => decreaseQty(item.id)}>-</button>
+                    <span>{item.qty}</span>
+                    <button onClick={() => increaseQty(item.id)}>+</button>
+                  </div>
+
+                  <p>PHP {parsePrice(item.price).toFixed(2)}</p>
+                  <p>PHP {(parsePrice(item.price) * Number(item.qty)).toFixed(2)}</p>
+
+                  <Trash2 className="delete-icon" onClick={() => deleteItem(item.id)} />
+                </div>
+              ))
+            )}
           </div>
 
           {/* RIGHT SIDE: PERSONAL INFO + PAYMENT */}
@@ -86,8 +90,12 @@ const Cart = () => {
             <p><strong>Name</strong><br /> Nadine Rufo</p>
 
             <h3>Total</h3>
-            <p style={{ marginBottom: '-10px' }}>Number of Items <span>{totalItems}</span></p>
-            <p>Price <span>PHP {totalPrice}</span></p>
+            <p style={{ marginBottom: '-10px' }}>
+              Number of Items <span>{totalItems}</span>
+            </p>
+            <p>
+              Price <span>PHP {totalPrice}</span>
+            </p>
 
             <h4>We Accept</h4>
             {["Gcash", "GoTyme", "SeaBank"].map((method) => (
@@ -104,7 +112,9 @@ const Cart = () => {
                 </p>
               </div>
             ))}
-            <button className="cartpreorder-btn">Pre-order</button>
+            <button className="cartpreorder-btn" disabled={cartItems.length === 0}>
+              Pre-order
+            </button>
           </div>
         </div>
       </section>

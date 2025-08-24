@@ -31,9 +31,12 @@ import waffle2 from '../imgs/products/waffle2.png'
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
+import { useCart } from "../context/CartContext";
+
 const Pastries = () => {
   const cookies = [
     {
+      id: "cookie1",
       img: cookies1,
       name: "Dulce De Leche Cookie",
       price: "PHP 129.50",
@@ -43,6 +46,7 @@ const Pastries = () => {
       category: "Cookies"
     },
     {
+      id: "cookie2",
       img: cookies2,
       name: "Dark Chocolate Macadamia",
       price: "PHP 139.50",
@@ -52,6 +56,7 @@ const Pastries = () => {
       category: "Cookies"
     },
     {
+      id: "cookie3",
       img: cookies3,
       name: "Chocolate Chip Cookie",
       price: "PHP 119.50",
@@ -61,6 +66,7 @@ const Pastries = () => {
       category: "Cookies"
     },
     {
+      id: "cookie4",
       img: cookies4,
       name: "Red Velvet Cookie",
       price: "PHP 129.00",
@@ -70,6 +76,7 @@ const Pastries = () => {
       category: "Cookies"
     },
     {
+      id: "cookie5",
       img: cookies5,
       name: "Cookies and Cream Cookie",
       price: "PHP 149.00",
@@ -79,6 +86,7 @@ const Pastries = () => {
       category: "Cookies"
     },
     {
+      id: "cookie6",
       img: cookies6,
       name: "Chocnut Cookie",
       price: "PHP 135.00",
@@ -91,6 +99,7 @@ const Pastries = () => {
 
   const croissants = [
     {
+      id: "croissant1",
       img: croissant1,
       name: "Cheddar Onion Croissant",
       price: "PHP 89.00",
@@ -100,6 +109,7 @@ const Pastries = () => {
       category: "Croissants"
     },
     {
+      id: "croissant2",
       img: croissant2,
       name: "Banana Chocolate Croissant",
       price: "PHP 99.00",
@@ -109,6 +119,7 @@ const Pastries = () => {
       category: "Croissants"
     },
     {
+      id: "croissant3",
       img: croissant3,
       name: "Ube Almond Croissant",
       price: "PHP 109.00",
@@ -118,6 +129,7 @@ const Pastries = () => {
       category: "Croissants"
     },
     {
+      id: "croissant4",
       img: croissant4,
       name: "Butter Croissant",
       price: "PHP 129.00",
@@ -127,6 +139,7 @@ const Pastries = () => {
       category: "Croissants"
     },
     {
+      id: "croissant5",
       img: croissant5,
       name: "Pistachio Croissant",
       price: "PHP 119.00",
@@ -136,6 +149,7 @@ const Pastries = () => {
       category: "Croissants"
     },
     {
+      id: "croissant6",
       img: croissant6,
       name: "Coffee Croissant",
       price: "PHP 135.00",
@@ -148,6 +162,7 @@ const Pastries = () => {
 
   const brownies = [
     {
+      id: "brownie1",
       img: brownies1,
       name: "Classic Brownie",
       price: "PHP 79.00",
@@ -157,6 +172,7 @@ const Pastries = () => {
       category: "Brownies"
     },
     {
+      id: "brownie2",
       img: brownies2,
       name: "Tiramisu Brownie",
       price: "PHP 89.00",
@@ -166,6 +182,7 @@ const Pastries = () => {
       category: "Brownies"
     },
     {
+      id: "brownie3",
       img: brownies3,
       name: "S'mores Brownie",
       price: "PHP 95.00",
@@ -178,6 +195,7 @@ const Pastries = () => {
 
   const tiramisu = [
     {
+      id: "tiramisu1",
       img: tiramisu1,
       name: "Classic Tiramisu",
       price: "PHP 199.00",
@@ -187,6 +205,7 @@ const Pastries = () => {
       category: "Tiramisu"
     },
     {
+      id: "tiramisu2",
       img: tiramisu2,
       name: "Matcha Tiramisu",
       price: "PHP 209.00",
@@ -199,6 +218,7 @@ const Pastries = () => {
 
   const waffles = [
     {
+      id: "waffle1",
       img: waffle1,
       name: "Classic Stroopwafel",
       price: "PHP 149.00",
@@ -208,6 +228,7 @@ const Pastries = () => {
       category: "Waffles"
     },
     {
+      id: "waffle2",
       img: waffle2,
       name: "Almond Chocolate Stroopwafel",
       price: "PHP 159.00",
@@ -252,8 +273,10 @@ const Pastries = () => {
     setTooltip({ ...tooltip, visible: false });
   };
 
-  const handleAddToCart = (item) => {
-    console.log("Added to cart:", item.name);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (pastry) => {
+    addToCart(pastry);
   };
 
   return (
@@ -311,11 +334,12 @@ const Pastries = () => {
 
               <button
                 className="add-to-cart-btn"
-                onClick={() => handleAddToCart(item)}
+                onClick={() => addToCart(item)}
                 aria-label={`Add ${item.name} to cart`}
               >
                 <FaShoppingCart />
               </button>
+
             </div>
           ))}
 
