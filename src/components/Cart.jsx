@@ -12,9 +12,8 @@ const Cart = () => {
     { id: 2, name: "Brownies", desc: "Rich and fudgy chocolate brownies", price: 129, qty: 2 },
     { id: 3, name: "Croissant", desc: "Buttery and flaky croissant", price: 99, qty: 1 },
     { id: 4, name: "Muffins", desc: "Blueberry muffins with crumble topping", price: 149, qty: 2 },
-    { id: 5, name: "Cheesecake", desc: "Creamy cheesecake slice", price: 199, qty: 1 },
-    { id: 6, name: "Cinnamon Roll", desc: "Sweet cinnamon swirls with glaze", price: 129, qty: 4 },
-    { id: 7, name: "Cupcake", desc: "Vanilla cupcakes with buttercream frosting", price: 89, qty: 5 },
+    { id: 5, name: "Cinnamon Roll", desc: "Sweet cinnamon swirls with glaze", price: 129, qty: 4 },
+    { id: 6, name: "Cupcake", desc: "Vanilla cupcakes with buttercream frosting", price: 89, qty: 5 },
   ])
 
   const [selectedPayment, setSelectedPayment] = useState(null)
@@ -62,8 +61,8 @@ const Cart = () => {
                 <div className="product-details">
                   <div className="product-photo"></div>
                   <div>
-                    <h3>{item.name}</h3>
-                    <p>{item.desc}</p>
+                    <h3 className='pastry-item-name'>{item.name}</h3>
+                    <p className='pastry-item-desc'>{item.desc}</p>
                   </div>
                 </div>
 
