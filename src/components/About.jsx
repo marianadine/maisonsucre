@@ -127,7 +127,7 @@ const About = () => {
       <img className='store' src={store} alt="Maison Sucré" />
       <img className='mockupborder' src={mockupborder} alt="Maison Sucré" />
 
-      <section className='container'>
+      <section className='packaging-section'>
         <div className='row-container abouts3'>
           <img className='mockup' src={packaging} alt="Maison Sucré" />
           <div style={{ width: '60%' }} className='text-container abouts3'>
@@ -138,7 +138,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className='container layers-section'>
+      <section className='layers-section'>
         <img className='layers' src={layers} alt="Maison Sucré Layers" />
         <div className="text-overlay">
           <h1 className='poppins-header abouts2'>Layers of goodness.</h1>
