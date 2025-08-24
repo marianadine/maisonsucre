@@ -69,3 +69,13 @@
         content: '...';
     }
 }
+
+@media (max-width: 480px) {
+    .logo {
+        width: 180px;
+    }
+
+    .loading-text {
+        font-size: 16px;
+    }
+}
