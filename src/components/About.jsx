@@ -21,7 +21,7 @@ import '../styles/About.css'
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const About = () => {
-  const images = [i1, i2, i3, i4, i5];
+  const images = [i1, i2, i5, i4, i3];
   const [index, setIndex] = useState(0);
 
   return (
