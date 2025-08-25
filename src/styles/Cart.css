@@ -85,10 +85,18 @@
 }
 
 .product-photo {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 8px;
-    background-color: #f2f2f2;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.product-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .product-details h3 {
@@ -100,6 +108,7 @@
     margin: 2px 0 0 0;
     font-size: 13px;
     color: #777;
+    width: 280px;
 }
 
 /* Quantity controls */
@@ -239,7 +248,7 @@
 
     .cart-header {
         font-size: 12px;
-        gap: -15px;
+        margin-right: 20px;
     }
 
     .cart-row {
@@ -247,7 +256,7 @@
         align-items: center;
         gap: 20px;
         padding: 10px 5px;
-        padding-right: 0px;
+        margin-right: 15px;
         border: 1px solid #eee;
         border-radius: 10px;
         margin-bottom: 15px;
@@ -258,7 +267,7 @@
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        width: 25%;
+        width: 20%;
     }
 
     .product-photo {
@@ -267,7 +276,7 @@
     }
 
     .pastry-item-name {
-        font-size: 14px !important;
+        font-size: 12px !important;
         text-align: center;
     }
 
