@@ -1,35 +1,54 @@
-import { createContext, useState, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-const CartContext = createContext();
+export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (product) => {
+  const addToCart = (item) => {
     setCartItems((prev) => {
-      const existing = prev.find((item) => item.id === product.id);
-
-      if (existing) {
-        return prev.map((item) =>
-          item.id === product.id
-            ? { ...item, qty: item.qty + 1 }
-            : item
+      const existingItem = prev.find((i) => i.id === item.id);
+      if (existingItem) {
+        return prev.map((i) =>
+          i.id === item.id ? { ...i, qty: i.qty + 1 } : i
         );
       } else {
-        return [...prev, { ...product, qty: 1 }];
+        return [...prev, { ...item, qty: 1 }];
       }
     });
   };
 
   const deleteItem = (id) => {
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
+    setCartItems((prev) => prev.filter((i) => i.id !== id));
   };
 
+  const increaseQty = (id) => {
+    setCartItems((prev) =>
+      prev.map((i) =>
+        i.id === id ? { ...i, qty: i.qty + 1 } : i
+      )
+    );
+  };
+
+  const decreaseQty = (id) => {
+    setCartItems((prev) =>
+      prev.map((i) =>
+        i.id === id && i.qty > 1 ? { ...i, qty: i.qty - 1 } : i
+      )
+    );
+  };
+
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, deleteItem }}>
+    <CartContext.Provider
+      value={{ cartItems, addToCart, deleteItem, increaseQty, decreaseQty }}
+    >
       {children}
     </CartContext.Provider>
+
   );
 };
 
-export const useCart = () => useContext(CartContext);
+export const useCart = () => {
+  return useContext(CartContext);
+};
