@@ -275,10 +275,6 @@ const Pastries = () => {
 
   const { addToCart } = useCart();
 
-  const handleAddToCart = (pastry) => {
-    addToCart(pastry);
-  };
-
   return (
     <div>
       {/* Search and Filter */}
@@ -335,7 +331,7 @@ const Pastries = () => {
               <button
                 className="add-to-cart-btn"
                 onClick={() => addToCart(item)}
-                aria-label={`Add ${item.name} to cart`}
+                aria-label={`Add ${item.name} to cart!`}
               >
                 <FaShoppingCart />
               </button>
