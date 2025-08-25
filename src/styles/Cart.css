@@ -156,22 +156,27 @@
 }
 
 .cart-summary h3 {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: -25px;
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: -15px;
 }
 
 .cart-summary h4 {
     font-size: 16px;
     font-weight: 500;
     margin-bottom: -5px;
+    margin-top: -5px;
 }
 
 .cart-summary p {
-    font-size: 14px;
+    font-size: 16px;
     color: #444;
     display: flex;
     justify-content: space-between;
+}
+
+.cart-name {
+    margin-bottom: -30px;
 }
 
 .cart-summary p strong {

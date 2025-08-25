@@ -88,7 +88,7 @@ const Cart = () => {
           {/* RIGHT SIDE: PERSONAL INFO + PAYMENT */}
           <div className="cart-summary">
             <h3>Personal Information</h3>
-            <p><strong>Name</strong><br /> Nadine Rufo</p>
+            <p className='cart-name'><strong>Name</strong><br /> Nadine Rufo</p>
 
             <h3>Total</h3>
             <p style={{ marginBottom: '-10px' }}>
