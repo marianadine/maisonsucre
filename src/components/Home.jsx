@@ -29,31 +29,38 @@ import bgvideo from '../imgs/bgvideo.mp4';
 import { FaPlus, FaMinus, FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
+import { useCart } from '../context/CartContext';
+import { desc } from 'framer-motion/client';
+
 const Home = () => {
   const pastries = [
     {
       id: 1,
       img: bs1,
       title: "Egg Tart Croissant",
-      desc: "Buttery, flaky croissant layers filled with smooth, velvety egg custard — a golden twist on a classic favorite."
+      desc: "Buttery, flaky croissant layers filled with smooth, velvety egg custard — a golden twist on a classic favorite.",
+      price: '150'
     },
     {
       id: 2,
       img: bs2,
       title: "Tiramisu Brownie",
-      desc: "Rich, fudgy brownie topped with creamy mascarpone and a hint of espresso — the perfect coffee-kissed indulgence."
+      desc: "Rich, fudgy brownie topped with creamy mascarpone and a hint of espresso — the perfect coffee-kissed indulgence.",
+      price: '180'
     },
     {
       id: 3,
       img: bs3,
       title: "Honeycomb Croissant",
-      desc: "Crisp, airy pastry with a caramelized honeycomb center — sweet, crunchy, and irresistibly buttery."
+      desc: "Crisp, airy pastry with a caramelized honeycomb center — sweet, crunchy, and irresistibly buttery.",
+      price: '200'
     },
     {
       id: 4,
       img: bs4,
       title: "Classic Tiramisu",
-      desc: "Layers of espresso-soaked ladyfingers and mascarpone cream, topped with cocoa — a timeless Italian classic."
+      desc: "Layers of espresso-soaked ladyfingers and mascarpone cream, topped with cocoa — a timeless Italian classic.",
+      price: '220'
     }
   ];
 
@@ -76,7 +83,6 @@ const Home = () => {
   const sectionRefs = [useRef(), useRef(), useRef(), useRef(), useRef()];
 
   useEffect(() => {
-    // Section observer (already working)
     const sectionOptions = { root: null, threshold: 0.5 };
     const sectionObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -110,6 +116,8 @@ const Home = () => {
       pastryObserver.disconnect();
     };
   }, []);
+
+  const { addToCart } = useCart();
 
   return (
     <div className="scroll-container">
@@ -149,7 +157,22 @@ const Home = () => {
                     <span className='qty-counter'>{quantities[item.id]}</span>
                     <button className="icon-btn" onClick={() => handleIncrement(item.id)}><FaPlus /></button>
                   </div>
-                  <button className="preorder-btn">Add to Cart</button>
+                  <button
+                    className="preorder-btn"
+                    onClick={() => {
+                      addToCart({
+                        id: item.id,
+                        name: item.title,
+                        desc: item.desc,
+                        img: item.img,
+                        price: item.price,
+                        qty: quantities[item.id]
+                      });
+                      setQuantities(prev => ({ ...prev, [item.id]: 1 }));
+                    }}
+                  >
+                    Add to Cart
+                  </button>
                 </div>
 
               </div>
