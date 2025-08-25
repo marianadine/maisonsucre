@@ -3,6 +3,7 @@
     align-items: flex-start;
     margin-top: 20px;
     height: auto;
+    width: 90%;
 }
 
 .thin-poppins-text {
@@ -31,10 +32,10 @@
 
 /* CART TABLE (Left Side) */
 .cart-table {
-    flex: 2;
+    flex: 1.5;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 .cart-header {
@@ -76,7 +77,6 @@
 .scrollable-cart::-webkit-scrollbar-thumb:hover {
     background: #1f4397;
 }
-
 
 .product-details {
     display: flex;
