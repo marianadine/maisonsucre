@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import '../styles/Cart.css'
 import '../styles/CommonStyles.css'
 import { Trash2 } from "lucide-react"
@@ -24,7 +24,6 @@ const Cart = () => {
   const totalPrice = cartItems?.length
     ? cartItems.reduce((acc, item) => acc + parsePrice(item.price) * Number(item.qty), 0)
     : 0;
-
 
   return (
     <div>
@@ -62,7 +61,9 @@ const Cart = () => {
               cartItems.map((item) => (
                 <div className="cart-row" key={item.id}>
                   <div className="product-details">
-                    <div className="product-photo"></div>
+                    <div className="product-photo">
+                      <img src={item.img} alt={item.name} />
+                    </div>
                     <div>
                       <h3 className='pastry-item-name'>{item.name}</h3>
                       <p className='pastry-item-desc'>{item.desc}</p>
