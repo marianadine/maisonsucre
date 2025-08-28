@@ -57,7 +57,7 @@ const Cart = () => {
     <div>
       <section className='container cart-section'>
         <h1 className='thin-poppins-text'>Your Cart</h1>
-        <p className='poppins-text' style={{ marginTop: '-30px', fontSize: '15px', color: '#777', width: '60%' }}>
+        <p className='poppins-text' style={{ marginTop: '-30px', fontSize: '15px', color: '#777', width: '55%' }}>
           Shop at our bakery with ease — delicious pastries, freshly made each
           day with the finest ingredients, baked to perfection, and crafted to
           bring warmth and joy to every bite.
@@ -179,7 +179,7 @@ const Cart = () => {
       </section>
 
       {/* CONTACT */}
-      <section style={{ marginTop: '-600px', zIndex: '-1' }} className='container'>
+      <section style={{ marginTop: '-590px', zIndex: '-1' }} className='container'>
         <h1 className='poppins-header inquiry-header'>Contact Us</h1>
         <div className="inquiry-row">
           <p className="inquiry-text">
