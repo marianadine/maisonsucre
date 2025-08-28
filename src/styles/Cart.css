@@ -26,7 +26,7 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: 40px;
-    margin-top: 30px;
+    margin-top: 15px;
     width: 100%;
 }
 
@@ -235,7 +235,7 @@
     font-size: 12px !important;
     font-style: italic;
     color: #888;
-    margin-top: 8px;
+    margin-top: -5px;
     text-align: center;
     width: 100%;
     display: block;
@@ -310,6 +310,8 @@
     justify-content: center;
     align-items: center;
     z-index: 2000;
+    padding: 10px;
+    /* small padding for mobile edge spacing */
 }
 
 .modal-content {
@@ -327,21 +329,24 @@
     font-weight: 700;
     border-bottom: #888888 dashed 1px;
     padding-bottom: 20px;
+    font-size: 20px;
 }
 
 .modal-content label {
     display: block;
     margin-bottom: 12px;
+    font-size: 14px;
 }
 
 .modal-content input,
 .modal-content textarea {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-top: 4px;
     border-radius: 6px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    font-size: 14px;
 }
 
 .modal-actions {
@@ -350,6 +355,8 @@
     gap: 10px;
     margin-top: 25px;
     margin-bottom: 10px;
+    flex-wrap: wrap;
+    /* allows stacking on small screens */
 }
 
 .modal-actions button {
@@ -360,7 +367,8 @@
     border: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    width: 100%;
+    flex: 1;
+    min-width: 120px;
 }
 
 .modal-actions button[type="submit"] {
@@ -488,5 +496,29 @@
     .cartpreorder-btn {
         font-size: 14px;
         padding: 10px 12px;
+    }
+
+    .modal-content {
+        width: 85%;
+        max-width: 300px;
+        padding: 25px;
+        margin: 0 auto;
+    }
+
+    .modal-content h2 {
+        font-size: 16px;
+        padding-bottom: 12px;
+    }
+
+    .modal-content input,
+    .modal-content textarea {
+        font-size: 13px;
+        padding: 5px;
+    }
+
+    .modal-actions button {
+        width: 100%;
+        font-size: 13px;
+        padding: 8px;
     }
 }
