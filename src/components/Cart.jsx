@@ -42,10 +42,13 @@ const Cart = () => {
     setBillingInfo({
       name: form.name.value,
       email: form.email.value,
-      address: form.address.value,
+      street: form.street.value,
+      city: form.city.value,
+      zip: form.zip.value,
     });
     setShowModal(false);
   };
+
 
   const isPreOrderDisabled =
     cartItems.length === 0 || !billingInfo || !selectedPayment;
@@ -117,7 +120,9 @@ const Cart = () => {
                 </div>
                 <div className="info-row">
                   <span className="label">Address:</span>
-                  <span className="value">{billingInfo.address}</span>
+                  <span className="value">
+                    {billingInfo.street}, {billingInfo.city}, {billingInfo.zip}
+                  </span>
                 </div>
               </div>
             ) : (
@@ -199,15 +204,40 @@ const Cart = () => {
           <div className="modal-content">
             <h2>Enter Billing Information</h2>
             <form onSubmit={handleFormSubmit}>
+
               <label>
-                Name* <input type="text" name="name" required />
+                Full Name*
+                <input type="text" name="name" required />
               </label>
+
               <label>
-                Email* <input type="email" name="email" required />
+                Email*
+                <input type="email" name="email" required />
               </label>
+
               <label>
-                Address* <textarea name="address" rows="3" required></textarea>
+                Street Address*
+                <input type="text" name="street" placeholder="123 Main St" required />
               </label>
+
+              <label>
+                City*
+                <input type="text" name="city" placeholder="e.g. Cavite" required />
+              </label>
+
+              <label>
+                ZIP/Postal Code*
+                <input
+                  type="text"
+                  name="zip"
+                  placeholder="e.g. 4102"
+                  pattern="\d{4}"
+                  maxLength="4"
+                  inputMode="numeric"
+                  required
+                />
+              </label>
+
               <div className="modal-actions">
                 <button type="submit">Save</button>
                 <button type="button" onClick={() => setShowModal(false)}>Cancel</button>
