@@ -1,7 +1,7 @@
 .container.cart-section {
     justify-content: flex-start;
     align-items: flex-start;
-    margin-top: 20px;
+    margin-top: 5px;
     height: auto;
     width: 90%;
 }
@@ -232,9 +232,14 @@
 }
 
 .hint-text {
-    font-size: 13px;
+    font-size: 12px !important;
+    font-style: italic;
     color: #888;
     margin-top: 8px;
+    text-align: center;
+    width: 100%;
+    display: block;
+    align-self: center;
 }
 
 .cart-summary p strong {

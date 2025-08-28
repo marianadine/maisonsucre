@@ -129,12 +129,11 @@ const Cart = () => {
               </p>
             )}
 
-            <h3>Total</h3>
-            <p style={{ marginBottom: '-10px' }}>
+            <p style={{ marginBottom: '-15px' }}>
               Number of Items <span>{totalItems}</span>
             </p>
             <p>
-              Price <span>PHP {totalPrice}</span>
+              Total <span>PHP {totalPrice}</span>
             </p>
 
             <h4>We Accept</h4>
