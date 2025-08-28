@@ -42,13 +42,13 @@ const Cart = () => {
     setBillingInfo({
       name: form.name.value,
       email: form.email.value,
+      phone: form.phone.value,
       street: form.street.value,
       city: form.city.value,
       zip: form.zip.value,
     });
     setShowModal(false);
   };
-
 
   const isPreOrderDisabled =
     cartItems.length === 0 || !billingInfo || !selectedPayment;
@@ -57,7 +57,7 @@ const Cart = () => {
     <div>
       <section className='container cart-section'>
         <h1 className='thin-poppins-text'>Your Cart</h1>
-        <p className='poppins-text' style={{ marginTop: '-30px', fontSize: '16px', color: '#777', width: '60%' }}>
+        <p className='poppins-text' style={{ marginTop: '-30px', fontSize: '15px', color: '#777', width: '60%' }}>
           Shop at our bakery with ease — delicious pastries, freshly made each
           day with the finest ingredients, baked to perfection, and crafted to
           bring warmth and joy to every bite.
@@ -114,6 +114,11 @@ const Cart = () => {
                   <span className="label">Name:</span>
                   <span className="value">{billingInfo.name}</span>
                 </div>
+                <div className="info-row">
+                  <span className="label">Phone:</span>
+                  <span className="value">{billingInfo.phone}</span>
+                </div>
+
                 <div className="info-row">
                   <span className="label">Email:</span>
                   <span className="value">{billingInfo.email}</span>
@@ -213,6 +218,17 @@ const Cart = () => {
               <label>
                 Email*
                 <input type="email" name="email" required />
+              </label>
+
+              <label>
+                Phone Number*
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="e.g. 09123456789 or +639123456789"
+                  pattern="^(09\d{9}|\+639\d{9})$"
+                  required
+                />
               </label>
 
               <label>
