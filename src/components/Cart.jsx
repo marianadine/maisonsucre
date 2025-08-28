@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import '../styles/Cart.css'
 import '../styles/CommonStyles.css'
 import { Trash2 } from "lucide-react"
@@ -11,6 +11,9 @@ import { useCart } from "../context/CartContext";
 const Cart = () => {
   const { cartItems, increaseQty, decreaseQty, deleteItem } = useCart();
   const [selectedPayment, setSelectedPayment] = useState(null);
+
+  const [billingInfo, setBillingInfo] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const parsePrice = (price) => {
     if (!price) return 0;
@@ -25,19 +28,33 @@ const Cart = () => {
     ? cartItems.reduce((acc, item) => acc + parsePrice(item.price) * Number(item.qty), 0)
     : 0;
 
+  const handlePreOrder = () => {
+    if (!billingInfo) {
+      setShowModal(true);
+      return;
+    }
+    alert(`Order confirmed for ${billingInfo.name}, total: PHP ${totalPrice}`);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    setBillingInfo({
+      name: form.name.value,
+      email: form.email.value,
+      address: form.address.value,
+    });
+    setShowModal(false);
+  };
+
+  const isPreOrderDisabled =
+    cartItems.length === 0 || !billingInfo || !selectedPayment;
+
   return (
     <div>
       <section className='container cart-section'>
         <h1 className='thin-poppins-text'>Your Cart</h1>
-        <p
-          className='poppins-text'
-          style={{
-            marginTop: '-30px',
-            fontSize: '16px',
-            color: '#777',
-            width: '60%'
-          }}
-        >
+        <p className='poppins-text' style={{ marginTop: '-30px', fontSize: '16px', color: '#777', width: '60%' }}>
           Shop at our bakery with ease — delicious pastries, freshly made each
           day with the finest ingredients, baked to perfection, and crafted to
           bring warmth and joy to every bite.
@@ -88,7 +105,29 @@ const Cart = () => {
           {/* RIGHT SIDE: PERSONAL INFO + PAYMENT */}
           <div className="cart-summary">
             <h3>Personal Information</h3>
-            <p className='cart-name'><strong>Name</strong><br /> Nadine Rufo</p>
+            {billingInfo ? (
+              <div className="billing-info">
+                <div className="info-row">
+                  <span className="label">Name:</span>
+                  <span className="value">{billingInfo.name}</span>
+                </div>
+                <div className="info-row">
+                  <span className="label">Email:</span>
+                  <span className="value">{billingInfo.email}</span>
+                </div>
+                <div className="info-row">
+                  <span className="label">Address:</span>
+                  <span className="value">{billingInfo.address}</span>
+                </div>
+              </div>
+            ) : (
+              <p
+                className="no-info clickable"
+                onClick={() => setShowModal(true)}
+              >
+                No information provided yet. <span className="link-text">Add yours?</span>
+              </p>
+            )}
 
             <h3>Total</h3>
             <p style={{ marginBottom: '-10px' }}>
@@ -113,13 +152,24 @@ const Cart = () => {
                 </p>
               </div>
             ))}
-            <button className="cartpreorder-btn" disabled={cartItems.length === 0}>
+            <button
+              className="cartpreorder-btn"
+              onClick={handlePreOrder}
+              disabled={isPreOrderDisabled}
+            >
               Pre-order
             </button>
+            {isPreOrderDisabled && (
+              <p className="hint-text">
+                Please add your personal info, select a payment method, and ensure your cart isn’t empty.
+              </p>
+            )}
+
           </div>
         </div>
       </section>
 
+      {/* CONTACT */}
       <section style={{ marginTop: '-600px', zIndex: '-1' }} className='container'>
         <h1 className='poppins-header inquiry-header'>Contact Us</h1>
         <div className="inquiry-row">
@@ -143,8 +193,32 @@ const Cart = () => {
           </div>
         </div>
       </section>
+
+      {/* MODAL for Billing Info */}
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2>Enter Billing Information</h2>
+            <form onSubmit={handleFormSubmit}>
+              <label>
+                Name* <input type="text" name="name" required />
+              </label>
+              <label>
+                Email* <input type="email" name="email" required />
+              </label>
+              <label>
+                Address* <textarea name="address" rows="3" required></textarea>
+              </label>
+              <div className="modal-actions">
+                <button type="submit">Save</button>
+                <button type="button" onClick={() => setShowModal(false)}>Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
 
-export default Cart
+export default Cart;
