@@ -1,3 +1,4 @@
+// WebController.js
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Home from "../components/Home";
@@ -6,6 +7,8 @@ import Navbar from "../components/Navbar";
 import Pastries from "../components/Pastries";
 import Cart from "../components/Cart";
 import LoadingScreen from "../components/LoadingScreen";
+import ScrollToTop from "../controller/ScrollToTop";
+import ScrollToTopButton from "../controller/ScrollToTopButton";
 import '../styles/CommonStyles.css';
 
 function WebController() {
@@ -65,13 +68,11 @@ function WebController() {
   return (
     <>
       <Navbar cartCount={cartItems.length} />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route
-          path="/pastry"
-          element={<Pastries addToCart={addToCart} />}
-        />
+        <Route path="/pastry" element={<Pastries addToCart={addToCart} />} />
         <Route
           path="/cart"
           element={
@@ -83,6 +84,7 @@ function WebController() {
           }
         />
       </Routes>
+      <ScrollToTopButton />
     </>
   );
 }
