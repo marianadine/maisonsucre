@@ -1,16 +1,13 @@
-.container.cart-section {
+.container1.cart-section {
     justify-content: flex-start;
     align-items: flex-start;
-    margin-top: 5px;
-    height: auto;
-    width: 90%;
 }
 
 .thin-poppins-text {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-size: 48px;
-    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* Cart Section */
@@ -395,11 +392,6 @@
         padding: 10px;
         width: 100%;
         margin-left: 20px;
-    }
-
-    .thin-poppins-text {
-        font-size: 22px;
-        text-align: center;
     }
 
     .cart-section p.poppins-text {

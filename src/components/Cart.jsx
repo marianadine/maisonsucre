@@ -54,10 +54,12 @@ const Cart = () => {
     cartItems.length === 0 || !billingInfo || !selectedPayment;
 
   return (
-    <div>
-      <section className='container cart-section'>
-        <h1 className='thin-poppins-text'>Your Cart</h1>
-        <p className='poppins-text' style={{ marginTop: '-30px', fontSize: '15px', color: '#777', width: '55%' }}>
+    <div className="mt-4 md:mt-0">
+      <section className="w-full min-h-screen px-4 py-12 pb-64 md:pb-80 mx-auto container1 cart-section">
+        <h1 className="font-poppins font-light text-2xl md:text-4xl lg:text-5xl mb-4 md:mb-8">
+          Your Cart
+        </h1>
+        <p className='poppins-text' style={{ fontSize: '15px', color: '#777', width: '55%' }}>
           Shop at our bakery with ease — delicious pastries, freshly made each
           day with the finest ingredients, baked to perfection, and crafted to
           bring warmth and joy to every bite.
@@ -178,30 +180,31 @@ const Cart = () => {
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section style={{ marginTop: '-590px', zIndex: '-1' }} className='container'>
-        <h1 className='poppins-header inquiry-header'>Contact Us</h1>
-        <div className="inquiry-row">
-          <p className="inquiry-text">
-            For inquiries, special requests, or a taste of Maison Sucré’s newest delights, you can reach us through our social channels below or send us a direct message—we’d love to hear from you.
-          </p>
 
-          <div className="inquiry-icons">
-            <a href="https://facebook.com/yourpage" aria-label="Facebook" target="_blank" rel="noreferrer">
-              <FaFacebookF />
-            </a>
-            <a href="mailto:hello@maisonsucre.com" aria-label="Gmail">
-              <SiGmail />
-            </a>
-            <a href="https://instagram.com/yourhandle" aria-label="Instagram" target="_blank" rel="noreferrer">
-              <FaInstagram />
-            </a>
-            <a href="https://tiktok.com/@yourhandle" aria-label="TikTok" target="_blank" rel="noreferrer">
-              <FaTiktok />
-            </a>
+      <div className="relative mt-8 md:mt-20">
+        <section className="w-full bg-[#1F4397] py-24 md:py-12">
+          <div className="inquiry-row">
+            <p className="inquiry-text">
+              For inquiries, special requests, or a taste of Maison Sucré’s newest delights, you can reach us through our social channels below or send us a direct message—we’d love to hear from you.
+            </p>
+
+            <div className="inquiry-icons">
+              <a href="https://facebook.com/yourpage" aria-label="Facebook" target="_blank" rel="noreferrer">
+                <FaFacebookF />
+              </a>
+              <a href="mailto:hello@maisonsucre.com" aria-label="Gmail">
+                <SiGmail />
+              </a>
+              <a href="https://instagram.com/yourhandle" aria-label="Instagram" target="_blank" rel="noreferrer">
+                <FaInstagram />
+              </a>
+              <a href="https://tiktok.com/@yourhandle" aria-label="TikTok" target="_blank" rel="noreferrer">
+                <FaTiktok />
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* MODAL for Billing Info */}
       {showModal && (
