@@ -136,7 +136,7 @@ const Home = () => {
             alt="Maison Sucré Logo"
             className="w-24 md:w-48"
           />
-          <h1 className="mainpagetext text-4xl md:text-6xl font-bold text-[#1F4397] leading-snug md:leading-tight">
+          <h1 className="mainpagetext text-4xl md:text-6xl font-medium text-[#1F4397] leading-snug md:leading-tight">
             Maison Sucré
           </h1>
           <p className="text-base md:text-xl text-gray-700">
@@ -145,7 +145,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="w-full min-h-screen flex flex-col justify-center"
+      <section className="w-full h-screen flex flex-col justify-center"
         ref={sectionRefs[1]} data-index={1}>
         <div className='row-container sweet-spotlights pb-8'>
           <h3 className='poppins-header font-poppins font-bold text-4xl text-[#1F4397] w-full'>Sweet Spotlights</h3>
