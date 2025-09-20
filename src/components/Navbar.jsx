@@ -24,12 +24,13 @@ const Navbar = () => {
                     </li>
                 </ul>
 
-                {/* Hamburger */}
-                <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                </div>
+
+            </div>
+            {/* Hamburger */}
+            <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
             </div>
         </nav>
     );

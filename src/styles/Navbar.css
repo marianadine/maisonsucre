@@ -77,5 +77,6 @@
 
     .menu-icon {
         display: flex;
+        margin-right: 10px !important;
     }
 }
