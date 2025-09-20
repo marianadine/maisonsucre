@@ -276,7 +276,7 @@ const Pastries = () => {
   const { addToCart } = useCart();
 
   return (
-    <div>
+    <>
       {/* Search and Filter */}
       <div className="pastry-controls w-full">
         <div className="search-wrapper">
@@ -307,7 +307,7 @@ const Pastries = () => {
       </div>
 
       {/* Display Grid */}
-      <section className="pastries w-full min-h-screen pb-60 md:pb-96">
+      <section className="overflow-x-hidden w-full min-h-screen flex flex-col justify-center items-center pb-60 md:pb-96">
         {/* <h1 className="poppins-text pastries" style={{ marginLeft: '350px', fontSize: '48px', fontWeight: '200' }}>
           {filterCategory === "All" ? "All Pastries" : filterCategory}
         </h1> */}
@@ -376,7 +376,7 @@ const Pastries = () => {
           {tooltip.content}
         </div>
       )}
-    </div>
+    </>
   );
 };
 export default Pastries;
