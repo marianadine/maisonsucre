@@ -5,7 +5,7 @@ import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <div className="App">
+<div className="w-full min-h-screen">
       <Router>
         <CartProvider>
           <WebController />
