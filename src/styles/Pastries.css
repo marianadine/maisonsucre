@@ -1,5 +1,10 @@
-.container.pastries {
-    height: fit-content;
+.pastries {
+    width: 100%;
+    max-width: 1900px;
+    height: auto;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-left: 120px;
 }
 
 /* Controls section */
@@ -252,8 +257,9 @@
 
 
 @media (max-width: 768px) {
-    .container.pastries {
+    .pastries {
         margin-bottom: 20px;
+        margin-left: 20px;
     }
 
     .pastry-controls {

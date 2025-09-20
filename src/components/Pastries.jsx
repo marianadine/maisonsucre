@@ -278,7 +278,7 @@ const Pastries = () => {
   return (
     <div>
       {/* Search and Filter */}
-      <div className="pastry-controls">
+      <div className="pastry-controls w-full">
         <div className="search-wrapper">
           <Search className="search-icon" />
           <input
@@ -307,10 +307,10 @@ const Pastries = () => {
       </div>
 
       {/* Display Grid */}
-      <section className="container pastries">
-        <h1 className="poppins-text pastries" style={{ marginLeft: '350px', fontSize: '48px', fontWeight: '200' }}>
+      <section className="pastries w-full min-h-screen pb-60 md:pb-96">
+        {/* <h1 className="poppins-text pastries" style={{ marginLeft: '350px', fontSize: '48px', fontWeight: '200' }}>
           {filterCategory === "All" ? "All Pastries" : filterCategory}
-        </h1>
+        </h1> */}
         <div className="pastry-grid">
           {filteredPastries.map((item, index) => (
             <div
@@ -319,7 +319,7 @@ const Pastries = () => {
               onMouseMove={(e) => handleMouseMove(e, item)}
               onMouseLeave={handleMouseLeave}
             >
-              <img src={item.img} alt={item.name} />
+              <img src={item.img} alt={item.name} className="mx-auto" />
 
               <div className="pastry-info">
                 <h2>{item.name}</h2>
@@ -342,29 +342,30 @@ const Pastries = () => {
         </div>
       </section>
 
-      <section style={{ marginTop: '-450px', zIndex: '-1' }} className='container'>
-        <h1 className='poppins-header inquiry-header'>Contact Us</h1>
-        <div className="inquiry-row">
-          <p className="inquiry-text">
-            For inquiries, special requests, or a taste of Maison Sucré’s newest delights, you can reach us through our social channels below or send us a direct message—we’d love to hear from you.
-          </p>
+      <div className='relative'>
+        <section className="w-full absolute bottom-0 left-0">
+          <div className="inquiry-row">
+            <p className="inquiry-text">
+              For inquiries, special requests, or a taste of Maison Sucré’s newest delights, you can reach us through our social channels below or send us a direct message—we’d love to hear from you.
+            </p>
 
-          <div className="inquiry-icons">
-            <a href="https://facebook.com/yourpage" aria-label="Facebook" target="_blank" rel="noreferrer">
-              <FaFacebookF />
-            </a>
-            <a href="mailto:hello@maisonsucre.com" aria-label="Gmail">
-              <SiGmail />
-            </a>
-            <a href="https://instagram.com/yourhandle" aria-label="Instagram" target="_blank" rel="noreferrer">
-              <FaInstagram />
-            </a>
-            <a href="https://tiktok.com/@yourhandle" aria-label="TikTok" target="_blank" rel="noreferrer">
-              <FaTiktok />
-            </a>
+            <div className="inquiry-icons">
+              <a href="https://facebook.com/yourpage" aria-label="Facebook" target="_blank" rel="noreferrer">
+                <FaFacebookF />
+              </a>
+              <a href="mailto:hello@maisonsucre.com" aria-label="Gmail">
+                <SiGmail />
+              </a>
+              <a href="https://instagram.com/yourhandle" aria-label="Instagram" target="_blank" rel="noreferrer">
+                <FaInstagram />
+              </a>
+              <a href="https://tiktok.com/@yourhandle" aria-label="TikTok" target="_blank" rel="noreferrer">
+                <FaTiktok />
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* Tooltip floating */}
       {tooltip.visible && (
