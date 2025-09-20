@@ -120,29 +120,39 @@ const Home = () => {
   const { addToCart } = useCart();
 
   return (
-    <div className="scroll-container">
+    <div className="w-full min-h-screen">
       <ScrollIndicator sections={5} activeSection={activeSection} />
 
-      <section className="container" ref={sectionRefs[0]} data-index={0}>
+      <section className="w-full min-h-screen relative flex items-center justify-center px-4"
+        ref={sectionRefs[0]} data-index={0}>
         <img src={home4} alt="Top pastry" className="edge-img top" />
         <img src={home1} alt="Left pastry" className="edge-img left" />
         <img src={home3} alt="Bottom pastry" className="edge-img bottom" />
         <img src={home2} alt="Right pastry" className="edge-img right" />
 
-        <div className="center-text">
-          <img src={mslogo} alt="Maison Sucré Logo" className="mainlogo" />
-          <h1 className="mainpagetext">Maison Sucré</h1>
-          <p>A home for refined sweetness.</p>
+        <div className="flex flex-col items-center text-center space-y-1 md:space-y-2 z-10">
+          <img
+            src={mslogo}
+            alt="Maison Sucré Logo"
+            className="w-24 md:w-48"
+          />
+          <h1 className="mainpagetext text-4xl md:text-6xl font-bold text-[#1F4397] leading-snug md:leading-tight">
+            Maison Sucré
+          </h1>
+          <p className="text-base md:text-xl text-gray-700">
+            A home for refined sweetness.
+          </p>
         </div>
       </section>
 
-      <section className='container sweet-spotlights' ref={sectionRefs[1]} data-index={1}>
-        <div className='row-container sweet-spotlights'>
-          <h3 className='poppins-header'>Sweet Spotlights</h3>
-          <p className='poppins-text' style={{ textAlign: 'right' }}>From flaky layers to decadent bites, these are the pastries that have captured hearts and taste buds alike.</p>
+      <section className="w-full min-h-screen flex flex-col justify-center"
+        ref={sectionRefs[1]} data-index={1}>
+        <div className='row-container sweet-spotlights pb-8'>
+          <h3 className='poppins-header font-poppins font-bold text-4xl text-[#1F4397] w-full'>Sweet Spotlights</h3>
+          <p className='poppins-text font-poppins text-2xl w-full' style={{ textAlign: 'right' }}>From flaky layers to decadent bites, these are the pastries that have captured hearts and taste buds alike.</p>
         </div>
 
-        <div className="menu-grid">
+        <div className="menu-grid grid grid-cols-2 gap-8 p-5 w-4/5 mx-auto">
           {pastries.map((item) => (
             <div key={item.id} className="menu-card">
               <img className="menu-img" src={item.img} alt={item.title} />
@@ -182,7 +192,7 @@ const Home = () => {
       </section>
 
       <section
-        className="container"
+        className="section3hide w-full min-h-screen flex flex-col items-center justify-center text-center bg-cover bg-center"
         style={{ backgroundImage: `url(${sementbg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         ref={sectionRefs[2]}
         data-index={2}
@@ -200,7 +210,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='container' ref={sectionRefs[3]} data-index={3}>
+      <section className="w-full min-h-screen flex flex-col items-center justify-center"
+        ref={sectionRefs[3]} data-index={3}>
         <div className="crack-row">
           <img className="crack-cake" src={cs} alt="Crack Cake" />
 
@@ -215,33 +226,42 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='container' ref={sectionRefs[4]} data-index={4}>
-        <video className="bg-video" autoPlay loop muted playsInline>
+      <section
+        className="relative w-full min-h-screen flex flex-col justify-end"
+        ref={sectionRefs[4]}
+        data-index={4}
+      >
+        <video className="bg-video w-full h-full object-cover" autoPlay loop muted playsInline>
           <source src={bgvideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
-        <div className="inquiry-row homepage">
-          <p className="inquiry-text">
-            For inquiries, special requests, or a taste of Maison Sucré’s newest delights, you can reach us through our social channels below or send us a direct message—we’d love to hear from you.
-          </p>
+        <div className='relative'>
+          <section className="w-full absolute bottom-0 left-0 p-4 md:p-4">
+            <div className="inquiry-row">
+              <p className="inquiry-text">
+                For inquiries, special requests, or a taste of Maison Sucré’s newest delights, you can reach us through our social channels below or send us a direct message—we’d love to hear from you.
+              </p>
 
-          <div className="inquiry-icons">
-            <a href="https://facebook.com/yourpage" aria-label="Facebook" target="_blank" rel="noreferrer">
-              <FaFacebookF />
-            </a>
-            <a href="mailto:hello@maisonsucre.com" aria-label="Gmail">
-              <SiGmail />
-            </a>
-            <a href="https://instagram.com/yourhandle" aria-label="Instagram" target="_blank" rel="noreferrer">
-              <FaInstagram />
-            </a>
-            <a href="https://tiktok.com/@yourhandle" aria-label="TikTok" target="_blank" rel="noreferrer">
-              <FaTiktok />
-            </a>
-          </div>
+              <div className="inquiry-icons">
+                <a href="https://facebook.com/yourpage" aria-label="Facebook" target="_blank" rel="noreferrer">
+                  <FaFacebookF />
+                </a>
+                <a href="mailto:hello@maisonsucre.com" aria-label="Gmail">
+                  <SiGmail />
+                </a>
+                <a href="https://instagram.com/yourhandle" aria-label="Instagram" target="_blank" rel="noreferrer">
+                  <FaInstagram />
+                </a>
+                <a href="https://tiktok.com/@yourhandle" aria-label="TikTok" target="_blank" rel="noreferrer">
+                  <FaTiktok />
+                </a>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
+
     </div>
   )
 }

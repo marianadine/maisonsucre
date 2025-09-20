@@ -380,4 +380,9 @@
     .crack-text-wrapper p.poppins-text {
         font-size: 14px !important;
     }
+
+    .row-container.sweet-spotlights,
+    .section3hide {
+        display: none;
+    }
 }
