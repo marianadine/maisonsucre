@@ -27,7 +27,7 @@ const About = () => {
   return (
     <div>
       <section
-        className="container about-container"
+        className="about-container w-full min-h-screen"
         style={{
           backgroundImage: `url(${mockupborder})`,
           backgroundSize: "cover",
@@ -47,17 +47,30 @@ const About = () => {
             Your browser does not support the video tag.
           </video>
           <div className='text-container aboutpage'>
-            <h1 className='mainpagetext about' style={{ fontWeight: '600', color: '#fff', marginTop: '20px' }}>Maison Sucré</h1>
-            <p className='poppins-text abouttag' style={{ fontWeight: '300', fontStyle: 'italic', color: '#fff' }}>/ meh-ZON soo-CRAY /</p>
-            <p className='poppins-text about subtitle' style={{ color: '#fff' }}>— Sweet House or House of Sweets</p>
-            <p className='poppins-text about' style={{ color: '#fff', width: '90%' }}>— A refined place where artisanal pastries and desserts are crafted with elegance and care. </p>
+            <h1 className="mainpagetext about font-libre-caslon font-bold text-white text-[96px] -mb-[15px]">
+              Maison Sucré
+            </h1>
+            <p className="poppins-text abouttag font-poppins text-2xl w-full font-light italic text-white mb-4">
+              / meh-ZON soo-CRAY /
+            </p>
+
+            <p className="poppins-text about subtitle font-poppins text-2xl w-full text-white mb-4">
+              — Sweet House or House of Sweets
+            </p>
+
+            <p className="poppins-text about font-poppins text-2xl w-[80%] text-white mb-4">
+              — A refined place where artisanal pastries and desserts are crafted with elegance and care.
+            </p>
+
             <img className='tag' src={tag} alt="Maison Sucré Tag" />
           </div>
         </div>
       </section>
 
-      <section className='container ingredients-section'>
-        <h1 className='poppins-header abouts2'>Whispers of Butter & Sugar</h1>
+      <section className="w-full min-h-screen flex flex-col items-center justify-center p-8">
+        <h1 className="poppins-header abouts2 font-poppins font-bold text-[48px] text-[#1F4397] w-full text-center">
+          Whispers of Butter & Sugar
+        </h1>
 
         <div className="carousel">
           {/* Left Arrow */}
@@ -130,8 +143,11 @@ const About = () => {
       <section className='packaging-section'>
         <div className='row-container abouts3'>
           <img className='mockup' src={packaging} alt="Maison Sucré" />
-          <div style={{ width: '60%' }} className='text-container abouts3'>
-            <h1 style={{ textAlign: 'left', marginBottom: '-10px' }} className='poppins-header abouts3'>Wrapped in elegance, sealed with care.</h1>
+          <div style={{ width: '100%' }} className='text-container abouts3'>
+            <h1 style={{ textAlign: 'left' }} className="poppins-header abouts3 font-poppins font-bold text-4xl text-[#1F4397] w-full text-left leading-snug">
+              Wrapped in elegance, sealed with care.
+            </h1>
+
 
             <p style={{ textAlign: 'justify' }} className='poppins-text abouts3'>At Maison Sucré, we handle our pastries with the same care we put into baking them. Every creation is placed in thoughtfully designed packaging that preserves freshness, protects delicate layers, and reflects our signature elegance. From the buttery flake of a croissant to the silky cream of a tiramisu, each piece is wrapped like a gift — because every bite should feel special before you even taste it.</p>
           </div>
