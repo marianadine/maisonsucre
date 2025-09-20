@@ -33,6 +33,8 @@
     align-items: center;
     scroll-snap-align: start;
     animation: fadeSlideUp 1s ease forwards;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 .scroll-container {
@@ -93,10 +95,13 @@
 /* text styles */
 .mainpagetext {
     font-family: "Libre Caslon Text", serif;
-    font-weight: 500;
     font-size: 96px;
     color: #1F4397;
     margin-bottom: -15px;
+}
+
+.mainpagetext.about {
+    color: #fff;
 }
 
 .poppins-header {
