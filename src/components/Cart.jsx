@@ -181,7 +181,7 @@ const Cart = () => {
       </section>
 
 
-      <div className="relative mt-8 md:mt-20">
+      <div className="relative mt-12 md:mt-32">
         <section className="w-full bg-[#1F4397] py-24 md:py-12">
           <div className="inquiry-row">
             <p className="inquiry-text">
