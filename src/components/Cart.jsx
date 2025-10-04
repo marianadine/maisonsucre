@@ -15,6 +15,8 @@ const Cart = () => {
   const [billingInfo, setBillingInfo] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
+  const [successModal, setSuccessModal] = useState(false);
+
   const parsePrice = (price) => {
     if (!price) return 0;
     return parseFloat(price.replace("PHP", "").trim());
@@ -33,7 +35,9 @@ const Cart = () => {
       setShowModal(true);
       return;
     }
-    alert(`Order confirmed for ${billingInfo.name}, total: PHP ${totalPrice}`);
+    // alert(`Order confirmed for ${billingInfo.name}, total: PHP ${totalPrice}`);
+
+    setSuccessModal(true);
   };
 
   const handleFormSubmit = (e) => {
@@ -141,7 +145,7 @@ const Cart = () => {
               </p>
             )}
 
-            <p style={{ marginBottom: '-15px' }}>
+            <p style={{ marginBottom: '-10px', marginTop: '15px' }} onClick={() => setShowModal(true)}>
               Number of Items <span>{totalItems}</span>
             </p>
             <p>
@@ -262,6 +266,18 @@ const Cart = () => {
                 <button type="button" onClick={() => setShowModal(false)}>Cancel</button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {successModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2 className='text-center'>Order Successful!</h2>
+            <p className='text-center'>Thank you for your order, {billingInfo.name}! Your total is PHP {totalPrice}.</p>
+            <div className="modal-actions">
+              <button type="button" onClick={() => setSuccessModal(false)}>Close</button>
+            </div>
           </div>
         </div>
       )}
