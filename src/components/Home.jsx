@@ -30,7 +30,6 @@ import { FaPlus, FaMinus, FaFacebookF, FaInstagram, FaTiktok } from "react-icons
 import { SiGmail } from "react-icons/si";
 
 import { useCart } from '../context/CartContext';
-import { desc } from 'framer-motion/client';
 
 const Home = () => {
   const pastries = [
@@ -97,7 +96,6 @@ const Home = () => {
       if (ref.current) sectionObserver.observe(ref.current);
     });
 
-    // pastry animation observer
     const pastryOptions = { root: null, threshold: 0.2 };
     const pastryObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
