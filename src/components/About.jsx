@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { motion, AnimatePresence } from "framer-motion";
-import honeycomb from '../imgs/honeycomb.jpg'
+import { motion } from "framer-motion";
 import mockupborder from '../imgs/mockupborder.png'
 
 import honeycombcroissant from '../imgs/honeycombcroissant.mp4'
