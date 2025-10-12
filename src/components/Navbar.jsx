@@ -26,7 +26,7 @@ const Navbar = () => {
 
 
             </div>
-            {/* Hamburger */}
+
             <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
                 <div className="bar"></div>
                 <div className="bar"></div>
