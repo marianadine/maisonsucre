@@ -35,8 +35,6 @@ const Cart = () => {
       setShowModal(true);
       return;
     }
-    // alert(`Order confirmed for ${billingInfo.name}, total: PHP ${totalPrice}`);
-
     setSuccessModal(true);
   };
 
@@ -184,7 +182,6 @@ const Cart = () => {
         </div>
       </section>
 
-
       <div className="relative mt-12 md:mt-32">
         <section className="w-full bg-[#1F4397] py-24 md:py-12">
           <div className="inquiry-row">
@@ -210,7 +207,7 @@ const Cart = () => {
         </section>
       </div>
 
-      {/* MODAL for Billing Info */}
+      {/* modal for Billing Info */}
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-content">
